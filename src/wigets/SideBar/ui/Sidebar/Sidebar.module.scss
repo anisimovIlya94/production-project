@@ -1,0 +1,23 @@
+.Sidebar{
+    position: relative;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--navbar-height));
+    background-color: var(--inverted-bc-color);
+    transition: width 0.3s;
+}
+
+.collapsed{
+    width: var(--sidebar-width-collapsed);
+}
+
+.switchers{
+    position: absolute;
+    bottom: 28px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.langswitcher{
+    margin-left: 20px;
+}
