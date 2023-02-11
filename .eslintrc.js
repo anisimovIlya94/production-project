@@ -1,12 +1,14 @@
 module.exports = {
 	"env": {
 		"browser": true,
-		"es2021": true
+		"es2021": true,
+		"jest": true
 	},
 	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended",
+		"plugin:i18next/recommended"
 	],
 	"overrides": [
 	],
@@ -17,12 +19,13 @@ module.exports = {
 	},
 	"plugins": [
 		"react",
-		"@typescript-eslint"
+		"@typescript-eslint",
+		"i18next"
 	],
 	"rules": {
 		"indent": [
 			"error",
-			"tab"
+			"tab",
 		],
 		"linebreak-style": [
 			"error",
@@ -37,6 +40,8 @@ module.exports = {
 			"never"
 		],
 		"react/react-in-jsx-scope": ["off"],
-		"@typescript-eslint/ban-ts-comment": ["off"]
+		"@typescript-eslint/ban-ts-comment": ["off"],
+		"i18next/no-literal-string": ["error", { markupOnly: true }],
+		"linebreak-style": ["off"]
 	}
 }
