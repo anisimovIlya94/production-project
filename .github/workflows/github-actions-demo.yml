@@ -1,22 +1,22 @@
-name: ci
-run-name: build and test 🚀
+name: ci🚀
 on: 
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
-  integration:
+  pipeline:
+    runs-on: windows-latest
     strategy:
       matrix:
-        os: [windows-latest]
-        node: [17.x]
-    runs-on: ${{ matrix.os }}
-     steps:
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v1.4.3
+        node-version: [ 17.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-        node-version: ${{ matrix.node }}
+          node-version: ${{ matrix.node-version }}
       - name: install packages
         uses: npm install
       - name: build prod version
