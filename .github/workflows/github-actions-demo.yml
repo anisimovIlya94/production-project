@@ -1,0 +1,29 @@
+name: ci
+run-name: build and test 🚀
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  integration:
+    strategy:
+      matrix:
+        os: [windows-latest]
+        node: [17.x]
+    runs-on: ${{ matrix.os }}
+     steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.3
+        with:
+        node-version: ${{ matrix.node }}
+      - name: install packages
+        uses: npm install
+      - name: build prod version
+        uses: npm run build:prod
+      - name: lint ts
+        uses: npm run lint:ts
+      - name: lint scss
+        uses: npm run lint:scss
+      - name: testing unit
+        uses: npm run test:unit
