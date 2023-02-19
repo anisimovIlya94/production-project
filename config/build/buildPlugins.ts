@@ -41,14 +41,14 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
 		plugins.push(
 			{
 				apply: (compiler: webpack.Compiler) => {
-				  compiler.hooks.done.tap('DonePlugin', (stats) => {
-					console.log('Compile is done !')
-					setTimeout(() => {
-					  process.exit(0)
+					compiler.hooks.done.tap("DonePlugin", (stats) => {
+						console.log("Compile is done !")
+						setTimeout(() => {
+							process.exit(0)
+						})
 					})
-				  });
 				}
-			 }
+			}
 		)
 	}
 	return plugins

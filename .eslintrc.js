@@ -42,7 +42,8 @@ module.exports = {
 		"react/react-in-jsx-scope": ["off"],
 		"@typescript-eslint/ban-ts-comment": ["off"],
 		"i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["data-testid", "to"] }],
-		"linebreak-style": ["off"]
+		"linebreak-style": ["off"],
+		"react/display-name": ["off"]
 	},
 	overrides: [
 		{

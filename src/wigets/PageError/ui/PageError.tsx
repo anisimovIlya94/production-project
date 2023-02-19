@@ -19,7 +19,7 @@ export function PageError(props: PropsWithChildren<PageErrorProps>) {
 	return (
 		<div className={classNames(cls.PageError, {}, [className])}>
 			<p>{t("Произошла непредвиденная ошибка")}</p>
-			<Button onClick={reload}>Обновить страницу</Button>
+			<Button onClick={reload}>{t("Обновить страницу")}</Button>
 		</div>
 	)
 }

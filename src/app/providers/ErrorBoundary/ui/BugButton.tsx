@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { Button } from "shared/ui/Button/Button"
 
 export function BugButton() {
 	const [error, setError] = useState(false)
+	const {t} = useTranslation()
 
 	useEffect(() => {
 		if (error) {
@@ -12,7 +14,7 @@ export function BugButton() {
 
 	return (
 		<Button onClick={()=>{setError(prev => !prev)}}>
-        toggleError
+			{t("Создать ошибку")}
 		</Button>
 	)
 }

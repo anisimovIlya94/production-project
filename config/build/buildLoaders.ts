@@ -1,4 +1,4 @@
-import { buildCssLoader } from './loaders/buildSccLoader';
+import { buildCssLoader } from "./loaders/buildSccLoader"
 import { RuleSetRule } from "webpack"
 import { BuildOptions } from "./types/config"
 
