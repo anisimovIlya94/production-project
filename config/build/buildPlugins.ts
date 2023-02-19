@@ -22,11 +22,34 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
 		}),
 		new BundleAnalyzerPlugin({
 			openAnalyzer: false
-		})
+		}),
+		// {
+		// 	apply: (compiler: webpack.Compiler) => {
+		// 	  compiler.hooks.done.tap('DonePlugin', (stats) => {
+		// 		console.log('Compile is done !')
+		// 		setTimeout(() => {
+		// 		  process.exit(0)
+		// 		})
+		// 	  });
+		// 	}
+		//  }
 	]
 	if (isDev) {
 		plugins.push(new webpack.HotModuleReplacementPlugin())
 		plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
+	} else {
+		plugins.push(
+			{
+				apply: (compiler: webpack.Compiler) => {
+				  compiler.hooks.done.tap('DonePlugin', (stats) => {
+					console.log('Compile is done !')
+					setTimeout(() => {
+					  process.exit(0)
+					})
+				  });
+				}
+			 }
+		)
 	}
 	return plugins
 }
