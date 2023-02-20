@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Button } from "shared/ui/Button/Button"
+import { Button, ButtonTheme } from "shared/ui/Button/Button"
 
 export function BugButton() {
 	const [error, setError] = useState(false)
@@ -13,7 +13,7 @@ export function BugButton() {
 	},[error])
 
 	return (
-		<Button onClick={()=>{setError(prev => !prev)}}>
+		<Button theme={ButtonTheme.OUTLINE} onClick={()=>{setError(prev => !prev)}}>
 			{t("Создать ошибку")}
 		</Button>
 	)

@@ -1,15 +1,15 @@
 import { screen, fireEvent } from "@testing-library/react"
-import { renderWithTranslation } from "shared/lib/tests/renderWithTranslation"
+import { componentRouter } from "shared/lib/tests/componentRender/componentRender"
 import { Sidebar } from "./Sidebar"
 
 describe("button", () => {
 	test("Отображение", () => {
-		renderWithTranslation(<Sidebar/>)
+		componentRouter(<Sidebar/>)
 		expect(screen.getByTestId("sidebar")).toBeInTheDocument()
 	})
 
 	test("Открытие сайдбара", () => {
-		renderWithTranslation(<Sidebar/>)
+		componentRouter(<Sidebar/>)
 		const button = screen.getByTestId("sidebar-button")
 		fireEvent.click(button)
 		expect(screen.getByTestId("sidebar")).toHaveClass("collapsed")
