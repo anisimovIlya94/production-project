@@ -3,11 +3,14 @@
 @import "./themes/lightTheme";
 @import "./variables/global";
 
-.app {
+body {
   font: var(--font-m);
-  background: var(--bc-color);
   color: var(--primary-color);
-  height: 100vh;
+}
+
+.app {
+  background: var(--bc-color);
+  min-height: 100vh;
 }
 
 .content-page {
