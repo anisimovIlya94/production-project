@@ -23,7 +23,7 @@ export function Navbar(props: PropsWithChildren<NavbarProps>) {
 
 	return (
 		<div className={classNames(cls.Navbar, {}, [className])}>
-			<Button theme={ButtonTheme.OUTLINE} className={cls.links} onClick={onToggleModal}>
+			<Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onToggleModal}>
 				{t("Войти")}
 			</Button>
 			<Modal isOpen={isAuthModal} onClose={onToggleModal}>

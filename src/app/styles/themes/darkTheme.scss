@@ -1,8 +1,10 @@
-.app.dark {
+.app_dark {
   --bc-color: rgb(0 0 109);
-  --inverted-bc-color: rgb(254 244 205);
+  --inverted-bc-color: rgb(255 254 248);
   --primary-color: red;
   --secondary-color: rgb(0 255 21);
-  --inverted-primary-color: rgb(154 137 10);
-  --inverted-secondary-color: yellow;
+
+  // --inverted-primary-color: rgb(154 137 10);
+  --inverted-primary-color: rgb(126 147 255);
+  --inverted-secondary-color: rgb(104 0 122);
 }
