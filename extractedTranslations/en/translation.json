@@ -1,10 +1,13 @@
 {
+  "Decrement": "",
+  "Increment": "",
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit": {
     "Deserunt mollitia amet ea ducimus odio velit quod accusantium, omnis ab neque!": ""
   },
   "Введите имя": "",
   "Введите пароль": "",
   "Войти": "",
+  "Выйти": "",
   "Главная": "",
   "Главная страница": "",
   "Короткий язык": "",
@@ -14,5 +17,6 @@
   "Произошла непредвиденная ошибка": "",
   "Создать ошибку": "",
   "Страница не найдена": "",
+  "Форма авторизации": "",
   "Язык": ""
 }
