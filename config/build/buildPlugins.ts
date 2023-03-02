@@ -1,13 +1,11 @@
-import { WebpackPluginInstance } from "webpack"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import webpack from "webpack"
 import { BuildOptions } from "./types/config"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 
-export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstance[] {
+export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
 	const plugins =  [
 		new HtmlWebpackPlugin({
 			template: paths.html
@@ -20,23 +18,12 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev) 
 		}),
-		new BundleAnalyzerPlugin({
-			openAnalyzer: false
-		}),
-		// {
-		// 	apply: (compiler: webpack.Compiler) => {
-		// 	  compiler.hooks.done.tap('DonePlugin', (stats) => {
-		// 		console.log('Compile is done !')
-		// 		setTimeout(() => {
-		// 		  process.exit(0)
-		// 		})
-		// 	  });
-		// 	}
-		//  }
 	]
+	
 	if (isDev) {
 		plugins.push(new webpack.HotModuleReplacementPlugin())
 		plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
+		plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: true }))
 	} else {
 		plugins.push(
 			{

@@ -29,4 +29,3 @@ export const routerConfig: Record<AppRoutes, RouteProps> = {
 		element: <NotFoundPage/>
 	}
 }
-

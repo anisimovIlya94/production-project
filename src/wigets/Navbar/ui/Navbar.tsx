@@ -32,7 +32,6 @@ export function Navbar(props: PropsWithChildren<NavbarProps>) {
 
 	const onLogOut = () => {
 		dispatch(userActions.logout())
-		setIsAuthModal(false)
 	}
 	
 	if (authData) {
@@ -50,7 +49,7 @@ export function Navbar(props: PropsWithChildren<NavbarProps>) {
 			<Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onOpenModal}>
 				{t("Войти")}
 			</Button>
-			<LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>
+			{isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>}
 		</div>
 	)
 }
