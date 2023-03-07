@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames"
 import DarkIcon from "../../assets/icons/theme-dark.svg"
 import LightIcon from "../../assets/icons/theme-light.svg"
 
-import type { PropsWithChildren } from "react"
+import { memo, PropsWithChildren } from "react"
 import { Theme, useThemes } from "app/providers/themeProvider"
 import { Button, ButtonTheme } from "../Button/Button"
 
@@ -10,7 +10,7 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-export function ThemeSwitcher(props: PropsWithChildren<ThemeSwitcherProps>) {
+export const ThemeSwitcher = memo((props: PropsWithChildren<ThemeSwitcherProps>) => {
 	const { className } = props
 	const { theme, toggleTheme } = useThemes()
 
@@ -22,4 +22,4 @@ export function ThemeSwitcher(props: PropsWithChildren<ThemeSwitcherProps>) {
 			{theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
 		</Button>
 	)
-}
+})

@@ -5,7 +5,7 @@ import { memo, PropsWithChildren, useCallback } from "react"
 import { Button, ButtonTheme } from "shared/ui/Button/Button"
 import { useTranslation } from "react-i18next"
 import { Input } from "shared/ui/Input/Input"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { loginActions, loginReducer } from "../../model/slice/LoginSlice"
 import { loginByUserName } from "features/AuthByUsername/model/services/loginByUserName/loginByUserName"
 import { Text, TextTheme } from "shared/ui/Text/Text"
@@ -15,9 +15,11 @@ import { getLoginPassword } from "features/AuthByUsername/model/selectors/getLog
 import { getLoginIsLoading } from "features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading"
 import { getLoginError } from "features/AuthByUsername/model/selectors/getLoginError/getLoginError"
 import { DynamicModuleLoader } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
 
 export interface LoginFormProps {
-    className?: string;
+	className?: string;
+	isSuccess?: () => void
 }
 
 const initialReducers = {
@@ -25,18 +27,14 @@ const initialReducers = {
 }
 
 const LoginForm = memo((props: PropsWithChildren<LoginFormProps>) => {
-	const { className } = props
+	const { className, isSuccess } = props
 	const { t } = useTranslation()
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	const username = useSelector(getLoginUserName)
 	const password = useSelector(getLoginPassword)
 	const isLoading = useSelector(getLoginIsLoading)
 	const error = useSelector(getLoginError)
-	
-	
 
-	
-	
 	const onChangeUserName = useCallback((value: string) => {
 		dispatch(loginActions.setUserName(value))
 	}, [dispatch])
@@ -45,9 +43,12 @@ const LoginForm = memo((props: PropsWithChildren<LoginFormProps>) => {
 		dispatch(loginActions.setUserPassword(value))
 	}, [dispatch])
 	
-	const onLoginClick = useCallback(() => {
-		dispatch(loginByUserName({username, password}))
-	},[dispatch, username, password])
+	const onLoginClick = useCallback(async () => {
+		const result = await dispatch(loginByUserName({ username, password }))
+		if (result.meta.requestStatus === "fulfilled") {
+			isSuccess()
+		}
+	},[dispatch, username, password, isSuccess])
 
 	return (
 		<DynamicModuleLoader isUnmount={true} reducers={initialReducers}>

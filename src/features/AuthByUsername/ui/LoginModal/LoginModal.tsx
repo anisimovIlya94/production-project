@@ -23,7 +23,7 @@ export function LoginModal(props: PropsWithChildren<LoginModalProps>) {
 	return (
 		<Modal lazy onClose={onClose} isOpen={isOpen} className={classNames(cls.LoginModal, {}, [className])}>
 			<Suspense fallback={<Loader/>}>
-				<LoginFormAsync />
+				<LoginFormAsync isSuccess={onClose} />
 			</Suspense>
 		</Modal>
 	)
