@@ -8,8 +8,6 @@ export type ReducersList = {
     [name in StateSchemaKey]?: Reducer
 }
 
-type ReducerCortege = [StateSchemaKey, Reducer]
-
 interface DynamicModuleLoaderProps {
     reducers: ReducersList
     isUnmount: boolean
@@ -22,15 +20,15 @@ export function DynamicModuleLoader(props: PropsWithChildren<DynamicModuleLoader
 	const dispatch = useDispatch()
     
 	useEffect(() => {
-		Object.entries(reducers).forEach(([name, reducer]: ReducerCortege) => {
-			store.reducerManager.add(name, reducer)
+		Object.entries(reducers).forEach(([name, reducer]) => {
+			store.reducerManager.add(name as StateSchemaKey, reducer)
 			dispatch({type: `@INIT ${name} reducer`})
 		})
 		
 		return () => {
 			if (isUnmount) {
-				Object.entries(reducers).forEach(([name, reducer]: ReducerCortege) => {
-					store.reducerManager.remove("login")
+				Object.entries(reducers).forEach(([name, reducer]) => {
+					store.reducerManager.remove(name as StateSchemaKey)
 					dispatch({ type: `@DEST ${name} reducer` })
 				})
 			}

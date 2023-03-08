@@ -1,6 +1,5 @@
 import { getLoginUserName } from "./getLoginUserName"
 import { StateSchema } from "../../../../../app/providers/StoreProvider/config/StateSchema"
-import { DeepPartial } from "@reduxjs/toolkit"
 
 describe("getLoginError.test", () => {
 	test("shoud return error", () => {

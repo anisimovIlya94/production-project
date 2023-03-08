@@ -26,7 +26,7 @@ export enum ButtonSize {
 }
 
 export const Button = memo((props: ButtonProps) => {
-	const { className, children, theme, square, size = "M", disabled, ...otherProps } = props
+	const { className, children, theme = ButtonTheme.OUTLINE, square, size = "M", disabled, ...otherProps } = props
 	const mods = {
 		[cls.square]: square,
 		[cls.disabled]: disabled
