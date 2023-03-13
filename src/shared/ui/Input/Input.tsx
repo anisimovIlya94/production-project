@@ -3,12 +3,13 @@ import cls from "./Input.module.scss"
 
 import { InputHTMLAttributes, PropsWithChildren, memo } from "react"
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "readOnly">
 
 interface InputProps extends HTMLInputProps {
     className?: string;
     onChange?: (str: string) => void;
-    value?: string
+	value?: string | number 
+	readonly?: boolean
 }
 
 export const Input = memo((props: PropsWithChildren<InputProps>) => {
@@ -17,6 +18,7 @@ export const Input = memo((props: PropsWithChildren<InputProps>) => {
 		onChange,
 		value,
 		type = "text",
+		readonly,
 		...otherProps
 	} = props
 
@@ -25,8 +27,9 @@ export const Input = memo((props: PropsWithChildren<InputProps>) => {
 	}
 
 	return (
-		<div className={classNames(cls.Input, {}, [className])}>
+		<div className={classNames(cls.Input, {[cls.readonly] : readonly}, [className])}>
 			<input
+				readOnly={readonly}
 				type={type}
 				{...otherProps}
 				onChange={onChangeHandler} 

@@ -1,0 +1,19 @@
+.Wrapper {
+  display: flex;
+}
+
+.label {
+  margin-right: 15px;
+}
+
+.select {
+  outline: none;
+  background: none;
+  border: 2px solid var(--inverted-bc-color);
+  color: var(--inverted-bc-color);
+}
+
+.option {
+  background-color: var(--inverted-bc-color);
+  color: var(--inverted-primary-color);
+}

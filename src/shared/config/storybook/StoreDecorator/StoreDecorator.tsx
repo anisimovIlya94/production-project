@@ -2,7 +2,7 @@ import "app/styles/index.scss"
 import { Story } from "@storybook/react"
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider"
 import { loginReducer } from "features/AuthByUsername/model/slice/LoginSlice"
-import { profileReducer } from "entities/Profile/model/slice/profileSlice"
+import { profileReducer } from "entities/Profile"
 import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 
 const initialReducers: ReducersList = {
