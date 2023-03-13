@@ -1,1 +1,21 @@
-{}
+{
+    "Ваш возраст": "Your age",
+    "Ваш город": "Your city",
+    "Ваш никнейм": "Your nickname",
+    "Ваша фамилия": "Your last name",
+    "Ваше имя": "Your first name",
+    "Обновите страницу": "Please, refresh page",
+    "Произошла ошибка при закрузке данных пользователя": "Uploading user data error",
+    "Профиль": "Profile",
+    "Редактировать": "Edit",
+    "Ссылка на ваш аватар": "Your avatar link",
+    "Ваша валюта:": "Your currency:",
+    "Ваша страна:": "Your country:",
+    "Отменить": "Cancel",
+    "Сохранить": "Save",
+    "Некорректное имя пользователя": "Incorrect username",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректный город": "Incorrect city",
+    "Некорректные данные пользователя": "Incorrect user data",
+    "Ошибка получения данных пользователя с сервера": "Server error"
+}

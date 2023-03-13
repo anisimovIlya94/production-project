@@ -25,7 +25,7 @@ export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): web
 	if (isDev) {
 		plugins.push(new webpack.HotModuleReplacementPlugin())
 		plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
-		plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: true }))
+		plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
 	} else {
 		plugins.push(
 			{

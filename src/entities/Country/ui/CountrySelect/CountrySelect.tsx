@@ -22,7 +22,7 @@ const options = [
 
 export function CountrySelect(props: PropsWithChildren<CountrySelectProps>) {
 	const { className, onChange, value, readonly } = props
-	const {t} = useTranslation()
+	const {t} = useTranslation("profile")
 
 	const onChangeHandler = useCallback((value: string) => {
 		onChange?.(value as Country)

@@ -3,7 +3,8 @@
     "Главная страница" : "Main Page",
     "Переключить": "Toggle",
     "Главная" : "Main",
-    "О сайте": "About us",
+    "О сайтe": "About us",
+    "Профиль": "Profile",
     "Страница не найдена": "Page not found",
     "Произошла непредвиденная ошибка": "Something has wrong",
     "Создать ошибку": "Toggle error",
@@ -13,5 +14,6 @@
     "Введите имя": "Enter your name",
     "Введите пароль": "Enter your password",
     "Войти": "Sign In",
-    "Введены неверно логин или пароль": "Login or password entered incorrectly"
+    "Введены неверно логин или пароль": "Login or password entered incorrectly",
+    "Выйти": "Log Out"
 }

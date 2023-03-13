@@ -25,7 +25,7 @@ const reducers: ReducersList = {
 const ProfilePage = memo((props: PropsWithChildren<ProfilePageProps>) => {
 	const { className } = props
 	const dispatch = useAppDispatch() 
-	const {t} = useTranslation()
+	const {t} = useTranslation("profile")
 	const isLoading = useSelector(getProfileIsLoading)
 	const error = useSelector(getProfileError)
 	const readonly = useSelector(getProfileReadonly)

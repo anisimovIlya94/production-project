@@ -21,7 +21,7 @@ const options = [
 
 export function CurrencySelect(props: PropsWithChildren<CurrencySelectProps>) {
 	const { className, onChange, value, readonly } = props
-	const {t} = useTranslation()
+	const {t} = useTranslation("profile")
 
 	const onChangeHandler = useCallback((value: string) => {
 		onChange?.(value as Currency)

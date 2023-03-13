@@ -16,7 +16,7 @@ interface ProfilePageHeaderProps {
 
 export function ProfilePageHeader(props: PropsWithChildren<ProfilePageHeaderProps>) {
 	const { className, readonly } = props
-	const { t } = useTranslation()
+	const { t } = useTranslation("profile")
 	const dispatch = useAppDispatch()
 
 	const editProfile = useCallback(() => {
