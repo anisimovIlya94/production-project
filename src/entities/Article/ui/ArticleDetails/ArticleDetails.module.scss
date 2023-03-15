@@ -1,0 +1,35 @@
+.articleDetails {
+    min-height: 100%;
+}
+
+.avatar{
+    margin: 0 auto;
+}
+
+.title{
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.skeleton{
+    margin-top: 20px;
+}
+
+.avatarWrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.avatarInfo{
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    margin-right: 8px;
+}
+
+.block{
+    margin-top: 15px;
+}

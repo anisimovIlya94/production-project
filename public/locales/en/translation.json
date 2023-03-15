@@ -15,5 +15,6 @@
     "Введите пароль": "Enter your password",
     "Войти": "Sign In",
     "Введены неверно логин или пароль": "Login or password entered incorrectly",
-    "Выйти": "Log Out"
+    "Выйти": "Log Out",
+    "Статьи" : "Articles"
 }

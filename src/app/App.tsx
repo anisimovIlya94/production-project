@@ -4,12 +4,15 @@ import AppRouter from "./providers/router/ui/AppRouter"
 import { Navbar } from "wigets/Navbar"
 import { Sidebar } from "wigets/SideBar"
 import { Suspense, useEffect } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { userActions } from "entities/User"
+import { getUserInited } from "entities/User/model/selectors/getUserInited/getUserInited"
 
 const App = () => {
 	const { theme } = useThemes()
 	const dispatch = useDispatch()
+	const inited = useSelector(getUserInited)
+
 	useEffect(() => {
 		dispatch(userActions.initialAuthData())
 	},[dispatch])
@@ -19,7 +22,7 @@ const App = () => {
 				<Navbar />
 				<div className="content-page">
 					<Sidebar />
-					<AppRouter />
+					{inited && <AppRouter />}
 				</div>
 			</Suspense>
 		</div>
