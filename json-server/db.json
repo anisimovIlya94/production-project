@@ -109,23 +109,25 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
     }
   ],
   "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
+    "first": "Анисимов",
+    "lastname": "Илья",
+    "age": 28,
     "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
+    "country": "Russia",
+    "city": "EkB",
+    "username": "admin",
     "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
   }
 }

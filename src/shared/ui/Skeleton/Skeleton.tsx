@@ -1,7 +1,7 @@
-import { CSSProperties, FC } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./Skeleton.module.scss";
+import { CSSProperties, FC } from "react"
+import { useTranslation } from "react-i18next"
+import { classNames } from "shared/lib/classNames/classNames"
+import cls from "./Skeleton.module.scss"
 
 interface SkeletonProps {
   className?: string;
@@ -11,15 +11,15 @@ interface SkeletonProps {
 }
 
 export const Skeleton: FC<SkeletonProps> = (props) => {
-  const { className, width, height, border } = props;
-  const { t } = useTranslation();
-  const styles: CSSProperties = {
-    width,
-    height,
-    borderRadius: border
-  }
+	const { className, width, height, border } = props
+	const { t } = useTranslation()
+	const styles: CSSProperties = {
+		width,
+		height,
+		borderRadius: border
+	}
 
-  return <div style={styles} className={classNames(cls.skeleton, {}, [className])}>
+	return <div style={styles} className={classNames(cls.skeleton, {}, [className])}>
 
-  </div>;
-};
+	</div>
+}

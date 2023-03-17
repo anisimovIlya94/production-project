@@ -1,9 +1,8 @@
-import { ArticleImageBlock } from "entities/Article/model/types/article";
-import { FC } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Text, TextAlign } from "shared/ui/Text/Text";
-import cls from "./ArticleImageBlockComponent.module.scss";
+import { ArticleImageBlock } from "entities/Article/model/types/article"
+import { FC } from "react"
+import { classNames } from "shared/lib/classNames/classNames"
+import { Text, TextAlign } from "shared/ui/Text/Text"
+import cls from "./ArticleImageBlockComponent.module.scss"
 
 interface ArticleImageBlockComponentProps {
   className?: string;
@@ -11,16 +10,16 @@ interface ArticleImageBlockComponentProps {
 }
 
 export const ArticleImageBlockComponent: FC<ArticleImageBlockComponentProps> = (
-  props
+	props
 ) => {
-  const { className, block } = props;
+	const { className, block } = props
 
-  return (
-    <div
-      className={classNames(cls.articleImageBlockComponent, {}, [className])}
-    >
-      <img src={block.src} alt={block.title} className={cls.image} />
-      {block.title && <Text title={block.title} align={TextAlign.CENTER}/>}
-    </div>
-  );
-};
+	return (
+		<div
+			className={classNames(cls.articleImageBlockComponent, {}, [className])}
+		>
+			<img src={block.src} alt={block.title} className={cls.image} />
+			{block.title && <Text title={block.title} align={TextAlign.CENTER}/>}
+		</div>
+	)
+}

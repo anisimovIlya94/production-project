@@ -1,3 +1,4 @@
+import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema"
 import { Reducer, AnyAction, CombinedState, EnhancedStore, ReducersMapObject } from "@reduxjs/toolkit"
 import { AxiosInstance } from "axios"
 import { ArticleSchema } from "entities/Article"
@@ -14,6 +15,7 @@ export interface StateSchema {
     login?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleSchema
+    articleDetailsComments?: ArticleDetailsCommentsSchema
 }
 
 export interface ReducerManager{

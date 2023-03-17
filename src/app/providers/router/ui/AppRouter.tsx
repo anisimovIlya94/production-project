@@ -1,10 +1,8 @@
-import { Suspense, useCallback, useMemo } from "react"
+import { Suspense, useCallback } from "react"
 import { Routes, Route } from "react-router"
 import { FC } from "react"
 import { RoutePropsWithAuth, routerConfig } from "shared/config/routerConfig/routerConfig"
 import { PageLoader } from "shared/ui/PageLoader/PageLoader"
-import { useSelector } from "react-redux"
-import { getUserAuthData } from "entities/User/model/selectors/getUserAuthData/getUserAuthData"
 import { RequireAuth } from "./RequireAuth"
 
 const AppRouter: FC = () => {
@@ -23,9 +21,9 @@ const AppRouter: FC = () => {
 	},[])
 
 	return (
-			<Routes>
-				{Object.values(routerConfig).map(renderWithWrapper)}
-			</Routes>
+		<Routes>
+			{Object.values(routerConfig).map(renderWithWrapper)}
+		</Routes>
 		
 	)
 }
