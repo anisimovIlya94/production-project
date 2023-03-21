@@ -5,8 +5,10 @@ import { ThemeSwitcher } from "shared/ui/ThemeSwitcher/ThemeSwitcher"
 import { memo, PropsWithChildren, useState } from "react"
 import { LangSwitcher } from "shared/ui/LangSwitcher/LangSwitcher"
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button"
-import { sidebarItemsList } from "wigets/SideBar/model/items"
+// import { sidebarItemsList } from "wigets/SideBar/model/types/sidebar"
 import { SidebarItem } from "wigets/SideBar/SidebarItem/SidebarItem"
+import { useSelector } from "react-redux"
+import { getSidebarItems } from "wigets/SideBar/model/selectors/getSidebarItems"
 
 interface SidebarProps {
  className?: string;
@@ -16,6 +18,7 @@ export const Sidebar = memo((props: PropsWithChildren<SidebarProps>) => {
 	const { className } = props
     
 	const [collapsed, setCollapsed] = useState(false)
+	const sidebarItemsList = useSelector(getSidebarItems)
 
 	const toggleCollapse = () => {
 		setCollapsed(prev => !prev)

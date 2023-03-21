@@ -1,5 +1,5 @@
 import {classNames} from "shared/lib/classNames/classNames"
-import { memo, PropsWithChildren, useCallback, useEffect } from "react"
+import { memo, PropsWithChildren, useCallback } from "react"
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import { profileActions, profileReducer } from "entities/Profile/model/slice/profileSlice"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
@@ -13,6 +13,8 @@ import { Text, TextTheme } from "shared/ui/Text/Text"
 import { ProfilePageHeader } from ".."
 import { ValidateProfileError } from "entities/Profile/model/types/profile"
 import { useTranslation } from "react-i18next"
+import { useParams } from "react-router-dom"
+import { useInitialEffects } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
 
 interface ProfilePageProps {
     className?: string;
@@ -31,6 +33,7 @@ const ProfilePage = memo((props: PropsWithChildren<ProfilePageProps>) => {
 	const readonly = useSelector(getProfileReadonly)
 	const formData = useSelector(getProfileForm)
 	const validateErrors = useSelector(getProfileValidateErrors)
+	const {id} = useParams<{id: string}>()
 
 	const translatedValidateErrors = {
 		[ValidateProfileError.INCORRECT_USERNAME]: t("Некорректное имя пользователя"),
@@ -73,13 +76,19 @@ const ProfilePage = memo((props: PropsWithChildren<ProfilePageProps>) => {
 		if (!Number.isNaN(result)) {
 			dispatch(profileActions.updateData({age: result }))
 		}
-	},[dispatch])
+	}, [dispatch])
 	
-	useEffect(() => {
-		if (__PROJECT__ !== "storybook") {
-			dispatch(fetchProfileData())
+	useInitialEffects(() => {
+		if (id) {
+			dispatch(fetchProfileData(id))
 		}
-	},[dispatch])
+	})
+	
+	// useEffect(() => {
+	// 	if (__PROJECT__ !== "storybook") {
+	// 		dispatch(fetchProfileData())
+	// 	}
+	// },[dispatch])
 
 	return (
 		<DynamicModuleLoader isUnmount reducers={reducers}>

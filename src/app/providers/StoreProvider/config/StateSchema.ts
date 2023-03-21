@@ -7,6 +7,7 @@ import { ProfileSchema } from "entities/Profile"
 import { UserSchema } from "entities/User"
 import { LoginSchema } from "features/AuthByUsername"
 import { NavigateOptions, To } from "react-router-dom"
+import { AddCommentFormSchema } from "features/addCommentFrom"
 
 export interface StateSchema {
     counter: CounterSchema
@@ -16,6 +17,7 @@ export interface StateSchema {
     profile?: ProfileSchema
     articleDetails?: ArticleSchema
     articleDetailsComments?: ArticleDetailsCommentsSchema
+    addCommentForm?: AddCommentFormSchema
 }
 
 export interface ReducerManager{

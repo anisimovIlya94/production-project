@@ -102,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "id": "1679310539794",
+      "text": "123",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "1679310576057",
+      "text": "12233",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "1679311557073",
+      "text": "333",
+      "articleId": "1",
+      "userId": "2"
     }
   ],
   "users": [
@@ -117,17 +135,31 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+      "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     }
   ],
-  "profile": {
-    "first": "Анисимов",
-    "lastname": "Илья",
-    "age": 28,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "EkB",
-    "username": "admin",
-    "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Анисимов",
+      "lastname": "Илья",
+      "age": 28,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "EkB",
+      "username": "admin",
+      "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Ашимов",
+      "lastname": "Игорь",
+      "age": 29,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Kgn",
+      "username": "user",
+      "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
+    }
+  ]
 }

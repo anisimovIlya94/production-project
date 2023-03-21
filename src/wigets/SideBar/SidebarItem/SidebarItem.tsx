@@ -3,7 +3,7 @@ import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink"
 import cls from "./SidebarItem.module.scss"
 
 import { memo, PropsWithChildren } from "react"
-import { SidebarItemType } from "../model/items"
+import { SidebarItemType } from "../model/types/sidebar"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { getUserAuthData } from "entities/User/model/selectors/getUserAuthData/getUserAuthData"

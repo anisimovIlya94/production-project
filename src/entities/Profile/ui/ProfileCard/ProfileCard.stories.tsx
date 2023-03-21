@@ -6,7 +6,7 @@ import { Theme } from "app/providers/themeProvider"
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
 import { Currency } from "entities/Currency"
 import { Country } from "entities/Country"
-import AvatarImage from "shared/assets/tests/storybookAvatar.jpeg"
+// import AvatarImage from "shared/assets/tests/storybookAvatar.jpeg"
 import { ValidateProfileError } from "entities/Profile/model/types/profile"
 
 export default {
@@ -27,7 +27,7 @@ const data = {
 	country: Country.Russia,
 	city: "Ekb",
 	username: "admin",
-	avatar : AvatarImage
+	avatar : require("../../../../shared/assets/tests/storybookAvatar.jpeg")
 }
 
 export const Primary = Template.bind({})
