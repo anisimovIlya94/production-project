@@ -15,6 +15,7 @@ import { ValidateProfileError } from "entities/Profile/model/types/profile"
 import { useTranslation } from "react-i18next"
 import { useParams } from "react-router-dom"
 import { useInitialEffects } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
+import { Page } from "shared/ui/Page/Page"
 
 interface ProfilePageProps {
     className?: string;
@@ -92,7 +93,7 @@ const ProfilePage = memo((props: PropsWithChildren<ProfilePageProps>) => {
 
 	return (
 		<DynamicModuleLoader isUnmount reducers={reducers}>
-			<div className={classNames("", {}, [className])}>
+			<Page className={classNames("", {}, [className])}>
 				<ProfilePageHeader readonly={readonly}/>
 				{validateErrors?.length && validateErrors.map((err) => {
 					return <Text key={err} theme={TextTheme.ERROR} text={translatedValidateErrors[err]}/>
@@ -111,7 +112,7 @@ const ProfilePage = memo((props: PropsWithChildren<ProfilePageProps>) => {
 					onChangeCurrency={onChangeCurrency}
 					onChangeCountry={onChangeCountry}
 				/>
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	)
 })

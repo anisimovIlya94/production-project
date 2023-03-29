@@ -20,6 +20,7 @@ ProfileCard
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />
 
 const data = {
+	id: "1",
 	first: "Илья",
 	lastname: "Анисимов",
 	age: 28,

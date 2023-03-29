@@ -15,6 +15,7 @@ import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/service
 import { useParams } from "react-router-dom"
 import { AddCommentForm } from "features/addCommentFrom"
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/AddCommentForArticle/AddCommentForArticle"
+import { Page } from "shared/ui/Page/Page"
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -45,7 +46,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers} isUnmount>
-			<div className={classNames(cls.articleDetailsPage, {}, [className])}>
+			<Page className={classNames(cls.articleDetailsPage, {}, [className])}>
 				<ArticleDetails />
 				<Text className={cls.commentsTitle} title={t("Комментарии")} />
 				<Suspense fallback="">
@@ -55,7 +56,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 				</Suspense>
 				
 				<CommentList isLoading={isCommentsLoading} comments={comments} />
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	)
 }

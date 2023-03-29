@@ -6,8 +6,8 @@ import { CounterSchema } from "entities/Counter"
 import { ProfileSchema } from "entities/Profile"
 import { UserSchema } from "entities/User"
 import { LoginSchema } from "features/AuthByUsername"
-import { NavigateOptions, To } from "react-router-dom"
 import { AddCommentFormSchema } from "features/addCommentFrom"
+import { ArticlePageSchema } from "pages/ArticlePage/model/types/articlePage"
 
 export interface StateSchema {
     counter: CounterSchema
@@ -18,6 +18,7 @@ export interface StateSchema {
     articleDetails?: ArticleSchema
     articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
+    articlePage?: ArticlePageSchema
 }
 
 export interface ReducerManager{
@@ -35,7 +36,7 @@ export type StateSchemaKey = keyof StateSchema
 
 export interface ThunkExtraArg {
     api: AxiosInstance
-    navigate?: (to: To, options?: NavigateOptions) => void
+    // navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkOptions<T>{

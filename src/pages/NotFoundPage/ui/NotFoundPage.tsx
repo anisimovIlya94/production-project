@@ -3,6 +3,7 @@ import cls from "./NotFoundPage.module.scss"
 
 import type { PropsWithChildren } from "react"
 import { useTranslation } from "react-i18next"
+import { Page } from "shared/ui/Page/Page"
 
 interface NotFoundPageProps {
  className?: string;
@@ -13,8 +14,8 @@ export function NotFoundPage(props: PropsWithChildren<NotFoundPageProps>) {
 	const {t} = useTranslation()
 
 	return (
-		<div className={classNames(cls.NotFoundPage, {}, [className])}>
+		<Page className={classNames(cls.NotFoundPage, {}, [className])}>
 			{t("Страница не найдена")}
-		</div>
+		</Page>
 	)
 }

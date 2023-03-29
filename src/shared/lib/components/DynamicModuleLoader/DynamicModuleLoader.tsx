@@ -20,20 +20,27 @@ export function DynamicModuleLoader(props: PropsWithChildren<DynamicModuleLoader
 	const dispatch = useDispatch()
     
 	useEffect(() => {
+		const mountedReducers = store.reducerManager.getReducerMap()
+		
 		Object.entries(reducers).forEach(([name, reducer]) => {
-			store.reducerManager.add(name as StateSchemaKey, reducer)
-			dispatch({type: `@INIT ${name} reducer`})
+			const mounted = mountedReducers[name as StateSchemaKey] 
+
+			if (!mounted) {
+				store.reducerManager.add(name as StateSchemaKey, reducer)
+				dispatch({type: `@INIT ${name} reducer`})
+			}
 		})
 		
 		return () => {
 			if (isUnmount) {
-				Object.entries(reducers).forEach(([name, reducer]) => {
+				Object.entries(reducers).forEach(([name]) => {
 					store.reducerManager.remove(name as StateSchemaKey)
 					dispatch({ type: `@DEST ${name} reducer` })
 				})
 			}
 		}
-	},[isUnmount, dispatch, reducers, store])
+		//eslint-disable-next-line
+	},[])
 
 	return (
 		<>
