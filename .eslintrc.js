@@ -42,7 +42,7 @@ module.exports = {
 		],
 		"react/react-in-jsx-scope": ["off"],
 		"@typescript-eslint/ban-ts-comment": ["off"],
-		"i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["data-testid", "to"] }],
+		"i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["data-testid", "to", "target"] }],
 		"linebreak-style": ["off"],
 		"react/display-name": ["off"],
 		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks

@@ -1,9 +1,9 @@
 import { StateSchema } from "app/providers/StoreProvider"
 
 export const getArticleDetailsCommentsLoading = (state: StateSchema) => {
-	return state.articleDetailsComments?.isLoading
+	return state.articleDetailsPage?.comments.isLoading
 }
 
 export const getArticleDetailsCommentsError = (state: StateSchema) => {
-	return state.articleDetailsComments?.error
+	return state.articleDetailsPage?.comments.error
 }

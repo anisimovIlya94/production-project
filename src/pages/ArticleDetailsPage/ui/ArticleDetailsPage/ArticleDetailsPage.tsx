@@ -1,7 +1,7 @@
-import { ArticleDetails } from "entities/Article"
+import { ArticleDetails, ArticleList } from "entities/Article"
 import { CommentList } from "entities/Comment"
 import { getArticleDetailsCommentsLoading } from "../../model/selectors/getArticleDetailsCommentsData"
-import { articleDetailsCommentsReducer, getArticleDetailsComments } from "../../model/slice/articleDetailsCommentsSlice"
+import { getArticleDetailsComments } from "../../model/slice/articleDetailsCommentsSlice"
 import { FC, Suspense, useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
@@ -16,13 +16,17 @@ import { useParams } from "react-router-dom"
 import { AddCommentForm } from "features/addCommentFrom"
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/AddCommentForArticle/AddCommentForArticle"
 import { Page } from "wigets/Page/Page"
+import { articleDetailsPageReducer } from "../../model/slice"
+import { getArticleDetailsPageRecommendations } from "pages/ArticleDetailsPage/model/slice/articleDetailsPageRecommendationsSlice"
+import { getArticleDetailsPageRecommendationsLoading } from "pages/ArticleDetailsPage/model/selectors/getArticleDetailsPageRecommendations"
+import { fetchRecommendations } from "pages/ArticleDetailsPage/model/services/fetchRecommendations/fetchRecommendations"
 
 interface ArticleDetailsPageProps {
   className?: string;
 }
 
 const reducers: ReducersList = {
-	articleDetailsComments: articleDetailsCommentsReducer
+	articleDetailsPage: articleDetailsPageReducer
 }
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
@@ -34,10 +38,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 	const article = __PROJECT__ !== "storybook" ? id : "1"
 
 	const comments = useSelector(getArticleDetailsComments.selectAll)
+	const recommendations = useSelector(getArticleDetailsPageRecommendations.selectAll)
+	const isRecommendationsLoading = useSelector(getArticleDetailsPageRecommendationsLoading)
 	const isCommentsLoading = useSelector(getArticleDetailsCommentsLoading)
 
 	useInitialEffects(() => {
 		dispatch(fetchCommentsByArticleId(article))
+		dispatch(fetchRecommendations())
 	})
 
 	const onSetComment = useCallback((text) => {
@@ -48,6 +55,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 		<DynamicModuleLoader reducers={reducers} isUnmount>
 			<Page className={classNames(cls.articleDetailsPage, {}, [className])}>
 				<ArticleDetails />
+				<Text className={cls.commentsTitle} title={t("Рекомендуем")} />
+				<ArticleList target={"_blank"} className={cls.recommendations} articles={recommendations} isLoading={isRecommendationsLoading}/>
 				<Text className={cls.commentsTitle} title={t("Комментарии")} />
 				<Suspense fallback="">
 					<AddCommentForm
