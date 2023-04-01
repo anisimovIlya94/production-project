@@ -1,6 +1,5 @@
 import { getAddCommentError, getAddCommentText } from "features/addCommentFrom/model/selectors/getAddCommentSelectors"
 import { addCommentFormActions, addCommentFormReducer } from "features/addCommentFrom/model/slice/addCommentFormSlice"
-import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/AddCommentForArticle/AddCommentForArticle"
 import { FC, useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"

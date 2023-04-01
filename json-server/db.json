@@ -19,7 +19,7 @@
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "15.02.2019",
       "type": [
         "IT"
       ],
@@ -90,8 +90,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://masterjosh.com/storage/logos/miDzAjCbLFnqVGgz2yT0rxTcsAP2ZoxA9bIWxOen.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 10225,
+      "createdAt": "26.11.2018",
       "type": [
         "IT"
       ],
@@ -162,8 +162,8 @@
       "title": "Svelte news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://repository-images.githubusercontent.com/199337586/5b599200-b144-11e9-8f87-797dfda6c6af",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 5022,
+      "createdAt": "20.02.2023",
       "type": [
         "IT"
       ],
@@ -234,8 +234,8 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--fz5x-vtC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0fz107gkb6zui203w198.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1762,
+      "createdAt": "19.12.2021",
       "type": [
         "IT"
       ],
@@ -306,8 +306,8 @@
       "title": "C++ news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://logo-download.com/wp-content/data/images/png/C++-logo.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4023,
+      "createdAt": "26.03.2023",
       "type": [
         "IT"
       ],
@@ -378,8 +378,8 @@
       "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatars.mds.yandex.net/i?id=b5cbbba7cc1e2c93cced85ffcb6bd18a75eb9779-8497835-images-thumbs&n=13",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 7096,
+      "createdAt": "17.09.2021",
       "type": [
         "IT"
       ],
@@ -450,8 +450,8 @@
       "title": "C# news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.pngitem.com/pimgs/m/521-5219587_c-logo-transparent-background-hd-png-download.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 2689,
+      "createdAt": "15.01.2020",
       "type": [
         "IT"
       ],
@@ -522,8 +522,8 @@
       "title": "C news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://download.cnet.com/a/img/resize/ac3970c1fba87f03b4ab399b47f1e12e8d16c8c1/catalog/2017/05/17/12a7f6d2-4022-4885-8b33-6064eaa95ada/imgingest-1077857239632445261.png?auto=webp&fit=crop&width=64",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 11052,
+      "createdAt": "05.05.2022",
       "type": [
         "IT"
       ],
@@ -594,8 +594,8 @@
       "title": "Go news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.itsec.ru/hubfs/ISR/Golang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 7289,
+      "createdAt": "10.03.2021",
       "type": [
         "IT"
       ],
@@ -663,11 +663,11 @@
     {
       "id": "10",
       "userId": "1",
-      "title": "Javascript news",
+      "title": "Javascript news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 9641,
+      "createdAt": "09.09.2020",
       "type": [
         "IT"
       ],
@@ -735,11 +735,11 @@
     {
       "id": "11",
       "userId": "1",
-      "title": "Kotlin news",
+      "title": "Kotlin news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://masterjosh.com/storage/logos/miDzAjCbLFnqVGgz2yT0rxTcsAP2ZoxA9bIWxOen.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4463,
+      "createdAt": "11.08.2022",
       "type": [
         "IT"
       ],
@@ -807,11 +807,11 @@
     {
       "id": "12",
       "userId": "1",
-      "title": "Svelte news",
+      "title": "Svelte news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://repository-images.githubusercontent.com/199337586/5b599200-b144-11e9-8f87-797dfda6c6af",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 10223,
+      "createdAt": "17.07.2022",
       "type": [
         "IT"
       ],
@@ -879,11 +879,11 @@
     {
       "id": "13",
       "userId": "1",
-      "title": "Python news",
+      "title": "Python news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--fz5x-vtC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0fz107gkb6zui203w198.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 5293,
+      "createdAt": "16.06.2021",
       "type": [
         "IT"
       ],
@@ -951,11 +951,11 @@
     {
       "id": "14",
       "userId": "1",
-      "title": "C++ news",
+      "title": "C++ news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://logo-download.com/wp-content/data/images/png/C++-logo.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 8167,
+      "createdAt": "01.04.2023",
       "type": [
         "IT"
       ],
@@ -1023,11 +1023,11 @@
     {
       "id": "15",
       "userId": "1",
-      "title": "Java news",
+      "title": "Java news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatars.mds.yandex.net/i?id=b5cbbba7cc1e2c93cced85ffcb6bd18a75eb9779-8497835-images-thumbs&n=13",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 9534,
+      "createdAt": "14.10.2022",
       "type": [
         "IT"
       ],
@@ -1095,11 +1095,11 @@
     {
       "id": "16",
       "userId": "1",
-      "title": "C# news",
+      "title": "C# news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.pngitem.com/pimgs/m/521-5219587_c-logo-transparent-background-hd-png-download.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 2186,
+      "createdAt": "02.01.2023",
       "type": [
         "IT"
       ],
@@ -1167,11 +1167,11 @@
     {
       "id": "17",
       "userId": "1",
-      "title": "C news",
+      "title": "C news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://download.cnet.com/a/img/resize/ac3970c1fba87f03b4ab399b47f1e12e8d16c8c1/catalog/2017/05/17/12a7f6d2-4022-4885-8b33-6064eaa95ada/imgingest-1077857239632445261.png?auto=webp&fit=crop&width=64",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 7536,
+      "createdAt": "08.03.2021",
       "type": [
         "IT"
       ],
@@ -1239,11 +1239,11 @@
     {
       "id": "18",
       "userId": "1",
-      "title": "Go news",
+      "title": "Go news Свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.itsec.ru/hubfs/ISR/Golang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4533,
+      "createdAt": "29.06.2021",
       "type": [
         "IT"
       ],

@@ -1,26 +1,30 @@
 import {classNames} from "shared/lib/classNames/classNames"
 import cls from "./Select.module.scss"
 
-import type { ChangeEvent, PropsWithChildren } from "react"
-
-interface SelectOption {
-    value: string
+import type { ChangeEvent } from "react"
+ 
+export interface SelectOption<T extends string> {
+    value: T
     content: string
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
     className?: string
     label?: string
-    options: SelectOption[]
-    value?: string
+    options?: SelectOption<T>[]
+    value?: T
     readonly?: boolean
-    onSelect?: (value: string) => void
+    onSelect?: (value: T) => void
 }
 
-export function Select(props: PropsWithChildren<SelectProps>) {
+export const Select = <T extends string>(props: SelectProps<T>) => {
 	const { className, label, options, value, onSelect, readonly } = props
+
+	const selectHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+		onSelect?.(e.target.value as T)
+	}
     
-	const optionsList = options.map((opt) => {
+	const optionsList = options?.map((opt) => {
 		return (
 			<option
 				className={cls.option}
@@ -29,10 +33,6 @@ export function Select(props: PropsWithChildren<SelectProps>) {
 				{opt.content}
 			</option>)
 	})
-
-	const selectHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-		onSelect?.(e.target.value)
-	}
 
 	return (
 		<div className={classNames(cls.Wrapper, {}, [className])}>

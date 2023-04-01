@@ -12,10 +12,10 @@ export const useInfiniteScroll = (props: useInfiniteScrollProps) => {
 
 	useEffect(() => {
 		let observer: IntersectionObserver | null = null
-		if (callback) {
+		if (callback && wrapperRef) {
 			const options = {
 				root: wrapperRef.current,
-				rootMargin: "0px",
+				rootMargin: "20px",
 				threshold: 1.0,
 			}
               

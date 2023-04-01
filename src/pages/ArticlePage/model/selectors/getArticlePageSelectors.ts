@@ -1,5 +1,5 @@
 import { StateSchema } from "app/providers/StoreProvider/config/StateSchema"
-import { ArticleView } from "entities/Article"
+import { ArticleSortField, ArticleType, ArticleView } from "entities/Article"
 
 export const getArticlePageError = (state: StateSchema) => {
 	return state.articlePage?.error
@@ -27,4 +27,20 @@ export const getArticlePageHasMore = (state: StateSchema) => {
 
 export const getArticlePageInit = (state: StateSchema) => {
 	return state.articlePage?._init || false
+}
+
+export const getArticlePageOrder = (state: StateSchema) => {
+	return state.articlePage?.order ?? "asc"
+}
+
+export const getArticlePageSort = (state: StateSchema) => {
+	return state.articlePage?.sort ?? ArticleSortField.CREATED
+}
+
+export const getArticlePageSearch = (state: StateSchema) => {
+	return state.articlePage?.search ?? ""
+}
+
+export const getArticlePageType = (state: StateSchema) => {
+	return state.articlePage?.type ?? ArticleType.ALL
 }

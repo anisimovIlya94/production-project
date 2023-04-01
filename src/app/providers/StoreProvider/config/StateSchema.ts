@@ -8,10 +8,12 @@ import { UserSchema } from "entities/User"
 import { LoginSchema } from "features/AuthByUsername"
 import { AddCommentFormSchema } from "features/addCommentFrom"
 import { ArticlePageSchema } from "pages/ArticlePage/model/types/articlePage"
+import { ScrollSaveSchema } from "features/scrollSave"
 
 export interface StateSchema {
     counter: CounterSchema
-    user: UserSchema,
+    user: UserSchema
+    scrollSave: ScrollSaveSchema
     //асинхронные
     login?: LoginSchema
     profile?: ProfileSchema

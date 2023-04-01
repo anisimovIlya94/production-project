@@ -15,7 +15,7 @@ import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/service
 import { useParams } from "react-router-dom"
 import { AddCommentForm } from "features/addCommentFrom"
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/AddCommentForArticle/AddCommentForArticle"
-import { Page } from "shared/ui/Page/Page"
+import { Page } from "wigets/Page/Page"
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -54,7 +54,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 						onSetComment={onSetComment}
 					/>
 				</Suspense>
-				
 				<CommentList isLoading={isCommentsLoading} comments={comments} />
 			</Page>
 		</DynamicModuleLoader>
