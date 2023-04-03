@@ -20,6 +20,7 @@ import { articleDetailsPageReducer } from "../../model/slice"
 import { getArticleDetailsPageRecommendations } from "pages/ArticleDetailsPage/model/slice/articleDetailsPageRecommendationsSlice"
 import { getArticleDetailsPageRecommendationsLoading } from "pages/ArticleDetailsPage/model/selectors/getArticleDetailsPageRecommendations"
 import { fetchRecommendations } from "pages/ArticleDetailsPage/model/services/fetchRecommendations/fetchRecommendations"
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -54,6 +55,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 	return (
 		<DynamicModuleLoader reducers={reducers} isUnmount>
 			<Page className={classNames(cls.articleDetailsPage, {}, [className])}>
+				<ArticleDetailsPageHeader/>
 				<ArticleDetails />
 				<Text className={cls.commentsTitle} title={t("Рекомендуем")} />
 				<ArticleList target={"_blank"} className={cls.recommendations} articles={recommendations} isLoading={isRecommendationsLoading}/>

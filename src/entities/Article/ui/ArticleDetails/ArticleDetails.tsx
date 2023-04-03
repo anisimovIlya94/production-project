@@ -1,10 +1,10 @@
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from "entities/Article/model/selectors/getArticleDetailsData"
 import { fetchArticleById } from "entities/Article/model/services/fetchArticleById"
 import { articleDetailsReducer } from "entities/Article/model/slice/articleDetailsSlice"
-import { FC, useCallback } from "react"
+import { FC } from "react"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { classNames } from "shared/lib/classNames/classNames"
 import { DynamicModuleLoader } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
@@ -20,8 +20,6 @@ import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleT
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent"
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent"
 import { useInitialEffects } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
-import { Button } from "shared/ui/Button/Button"
-import { RoutesPath } from "shared/config/routerConfig/routerConfig"
 
 interface ArticleDetailsProps {
   className?: string;
@@ -55,11 +53,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
 	const data = useSelector(getArticleDetailsData)
 	const error = useSelector(getArticleDetailsError)
 	const articleId = (__PROJECT__ !== "storybook") ? id : "1"
-	const navigate = useNavigate()
+	
 
-	const onOpenArticleList = useCallback(() => {
-		navigate(RoutesPath.article_details)
-	},[navigate])
+
 
 	if (!articleId) {
 		return (
@@ -99,7 +95,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
 	} else {
 		content = (
 			<>
-				<Button onClick={onOpenArticleList}>{t("К списку статей")}</Button>
+				
 				<div className={cls.avatarWrapper}>
 					<Avatar size={200} src={data?.img} className={cls.avatar}/>
 				</div>
