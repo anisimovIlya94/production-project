@@ -21,7 +21,8 @@ module.exports = {
 		"react",
 		"@typescript-eslint",
 		"i18next",
-		"react-hooks"
+		"react-hooks",
+		"fsd-aid-plugin"
 	],
 	"rules": {
 		"indent": [
@@ -47,7 +48,8 @@ module.exports = {
 		"react/display-name": ["off"],
 		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
 		"react-hooks/exhaustive-deps": "error", // Checks effect dependencies
-		"@typescript-eslint/no-var-requires": ["off"]
+		"@typescript-eslint/no-var-requires": ["off"],
+		"fsd-aid-plugin/path-checker-fsd": "error",
 	},
 	globals: {
 		__IS_DEV__: true,

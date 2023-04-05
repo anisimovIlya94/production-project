@@ -12,7 +12,7 @@ import { Input } from "shared/ui/Input/Input"
 import { useSelector } from "react-redux"
 import { getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType } from "../../model/selectors/getArticlePageSelectors"
 import { SortOption } from "shared/lib/types/sort"
-import { fetchArticles } from "pages/ArticlePage/model/services/fetchArticles"
+import { fetchArticles } from "../../model/services/fetchArticles"
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce"
 import { ArticleTypeTabs } from "entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs"
 

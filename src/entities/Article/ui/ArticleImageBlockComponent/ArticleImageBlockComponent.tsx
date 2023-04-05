@@ -1,4 +1,4 @@
-import { ArticleImageBlock } from "entities/Article/model/types/article"
+import { ArticleImageBlock } from "../../model/types/article"
 import { FC } from "react"
 import { classNames } from "shared/lib/classNames/classNames"
 import { Text, TextAlign } from "shared/ui/Text/Text"

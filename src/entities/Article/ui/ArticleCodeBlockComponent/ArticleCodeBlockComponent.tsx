@@ -1,4 +1,4 @@
-import { ArticleCodeBlock } from "entities/Article/model/types/article"
+import { ArticleCodeBlock } from "../../model/types/article"
 import { FC } from "react"
 import { useTranslation } from "react-i18next"
 import { classNames } from "shared/lib/classNames/classNames"

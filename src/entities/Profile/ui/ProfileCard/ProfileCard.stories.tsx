@@ -7,7 +7,7 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import { Currency } from "entities/Currency"
 import { Country } from "entities/Country"
 import AvatarImage from "../../../../shared/assets/tests/storybookAvatar.jpeg"
-import { ValidateProfileError } from "entities/Profile/model/types/profile"
+import { ValidateProfileError } from "../../model/types/profile"
 
 export default {
 	title: "entities/ProfileCard",
