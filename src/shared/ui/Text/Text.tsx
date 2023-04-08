@@ -11,7 +11,8 @@ export enum TextAlign {
 
 export enum TextSize {
 	L = "size_l",
-	M = "size_m"
+	M = "size_m",
+	S = "size_s"
 }
 
 interface TextProps {
@@ -28,6 +29,14 @@ export enum TextTheme {
     ERROR = "error"
 }
 
+type HeaderTagType = "h1" | "h2" | "h3"
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+	[TextSize.S]: "h3",
+	[TextSize.M]: "h2",
+	[TextSize.L]: "h1",
+}
+
 export const Text = memo((props: PropsWithChildren<TextProps>) => {
 	const {
 		className,
@@ -38,9 +47,11 @@ export const Text = memo((props: PropsWithChildren<TextProps>) => {
 		size = TextSize.M
 	} = props
 
+	const HeaderTag = mapSizeToHeaderTag[size]
+
 	return (
 		<div className={classNames(cls.Text, {}, [className, cls[theme], cls[align], cls[size]])}>
-			{title && <p className={cls.title}>{title}</p>}
+			{title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
 			{text && <p className={cls.text}>{text}</p>}
 		</div>
 	)

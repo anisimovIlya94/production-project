@@ -5,22 +5,13 @@
 }
 
 .input {
-  margin-top: 10px;
+  width: 100%;
 }
 
 .loading,
 .error {
   border: 2px solid var(--inverted-bc-color);
   height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatarWrapper {
-  display: flex;
-  width: 100%;
-  justify-content: center;
 }
 
 .edited {

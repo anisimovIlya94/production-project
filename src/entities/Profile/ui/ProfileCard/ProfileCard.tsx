@@ -11,6 +11,8 @@ import { Avatar } from "shared/ui/Avatar/Avatar"
 import { Currency, CurrencySelect } from "entities/Currency"
 import { CountrySelect } from "entities/Country/ui/CountrySelect/CountrySelect"
 import { Country } from "entities/Country"
+import { VStack } from "shared/ui/Stack/VStack/VStack"
+import { HStack } from "shared/ui/Stack/HStack/HStack"
 
 
 interface ProfileCardProps {
@@ -50,34 +52,33 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
 
 	if (isLoading) {
 		return (
-				
-			<div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+			<HStack justify="center" max className={classNames("", {}, [className, cls.loading])}>
 				<Loader/>
-			</div>
+			</HStack>
 		)
 	}
 
 	if (error) {
 		return (
-			<div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+			<HStack justify="center" className={classNames("", {}, [className, cls.error])}>
 				<Text
 					title={t("Произошла ошибка при закрузке данных пользователя")}
 					text={t("Обновите страницу")}
 					theme={TextTheme.ERROR}
 					align={TextAlign.CENTER}
 				/>
-			</div>
+			</HStack>
 		)
 	}
 
 	return (
-		<div className={classNames(cls.ProfileCard, {[cls.edited]: !readonly}, [className])}>
+		<VStack gap="16" max justify="center" className={classNames(cls.ProfileCard, {[cls.edited]: !readonly}, [className])}>
 			
 			{/* <div className={cls.data + " " + (!readonly ? cls.edited : "")}> */}
 			{data?.avatar &&
-					<div className={cls.avatarWrapper}>
+					<HStack max justify="center">
 						<Avatar src={data?.avatar} />
-					</div>
+					</HStack>
 			}
 			<Input readonly={readonly} onChange={onChangeFirstName} className={cls.input} value={data?.first} placeholder={t("Ваше имя")} />
 			<Input readonly={readonly} onChange={onChangeLastName} className={cls.input} value={data?.lastname} placeholder={t("Ваша фамилия")} />
@@ -88,6 +89,6 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
 			<CurrencySelect readonly={readonly} onChange={onChangeCurrency} value={data?.currency} />
 			<CountrySelect readonly={readonly} onChange={onChangeCountry} value={data?.country}/>
 			{/* </div> */}
-		</div>
+		</VStack>
 	)
 }

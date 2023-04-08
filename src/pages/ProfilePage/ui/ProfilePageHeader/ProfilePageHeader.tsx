@@ -1,5 +1,4 @@
 import {classNames} from "shared/lib/classNames/classNames"
-import cls from "./ProfilePageHeader.module.scss"
 
 import { PropsWithChildren, useCallback } from "react"
 import { Text } from "shared/ui/Text/Text"
@@ -11,6 +10,7 @@ import { updateProfileData } from "entities/Profile/model/services/updateProfile
 import { useSelector } from "react-redux"
 import { getUserAuthData } from "entities/User/model/selectors/getUserAuthData/getUserAuthData"
 import { getProfileData } from "entities/Profile"
+import { HStack } from "shared/ui/Stack/HStack/HStack"
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -38,22 +38,22 @@ export function ProfilePageHeader(props: PropsWithChildren<ProfilePageHeaderProp
 	},[dispatch])
 
 	return (
-		<div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+		<HStack justify="between" max className={classNames("", {}, [className])}>
 			<Text title={t("Профиль")} />
 			{
 				canEdit && 
-				<div className={cls.canEditBtns}>
+				<HStack gap="8">
 					{readonly
-						? <Button className={cls.editBtn} onClick={editProfile} theme={ButtonTheme.OUTLINE}>{t("Редактировать")}</Button>
+						? <Button onClick={editProfile} theme={ButtonTheme.OUTLINE}>{t("Редактировать")}</Button>
 						: (
 							<>
-								<Button className={cls.editBtn} onClick={cancelEditProfile} theme={ButtonTheme.OUTLINE_RED}>{t("Отменить")}</Button>
-								<Button className={cls.saveBtn} onClick={onSave} theme={ButtonTheme.OUTLINE}>{t("Сохранить")}</Button>
+								<Button onClick={cancelEditProfile} theme={ButtonTheme.OUTLINE_RED}>{t("Отменить")}</Button>
+								<Button onClick={onSave} theme={ButtonTheme.OUTLINE}>{t("Сохранить")}</Button>
 							</>
 						)}
-				</div>
+				</HStack>
 			}
 			
-		</div>
+		</HStack>
 	)
 }

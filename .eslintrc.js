@@ -43,7 +43,7 @@ module.exports = {
 		],
 		"react/react-in-jsx-scope": ["off"],
 		"@typescript-eslint/ban-ts-comment": ["off"],
-		"i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["data-testid", "to", "target"] }],
+		"i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["data-testid", "to", "target", "justify", "gap", "direction", "align", "role"] }],
 		"linebreak-style": ["off"],
 		"react/display-name": ["off"],
 		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
@@ -58,7 +58,7 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ["**/src/**/*.test.{ts,tsx}"],
+			files: ["**/src/**/*.test.{ts,tsx}", "**/src/**/*.stories.{ts,tsx}"],
 			rules: {
 				"i18next/no-literal-string": ["off"]
 			}

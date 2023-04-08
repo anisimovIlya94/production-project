@@ -7,6 +7,7 @@ import { SidebarItemType } from "../model/types/sidebar"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { getUserAuthData } from "entities/User/model/selectors/getUserAuthData/getUserAuthData"
+import { HStack } from "shared/ui/Stack/HStack/HStack"
 
 interface SidebarItemProps {
     item: SidebarItemType
@@ -24,11 +25,14 @@ export const SidebarItem = memo((props: PropsWithChildren<SidebarItemProps>) => 
 	}
 
 	return (
-		<div className={classNames(cls.SidebarItem, {[cls.collapsed] : collapsed}, [])}>
+		<div className={classNames("", { [cls.collapsed]: collapsed }, [])}>
 			<AppLink theme={AppLinkTheme.SECONDARY} className={cls.item} to={item.path}>
-				<item.Icon className={cls.icon} />
-				<span className={cls.link}>{t(item.text)}</span>
+				<HStack gap="4">
+					<item.Icon className={cls.icon} />
+					<span className={cls.link}>{t(item.text)}</span>
+				</HStack>
 			</AppLink>
+			
 		</div>
 	)
 })

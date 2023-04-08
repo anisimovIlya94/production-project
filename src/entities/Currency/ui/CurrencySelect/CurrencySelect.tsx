@@ -1,5 +1,4 @@
 import {classNames} from "shared/lib/classNames/classNames"
-import cls from "./CurrencySelect.module.scss"
 
 import { PropsWithChildren, useCallback } from "react"
 import { Select } from "shared/ui/Select/Select"
@@ -28,7 +27,7 @@ export function CurrencySelect(props: PropsWithChildren<CurrencySelectProps>) {
 	},[onChange])
 
 	return (
-		<div className={classNames(cls.ProfileCard, {}, [className])}>
+		<div className={classNames("", {}, [className])}>
 			<Select
 				value={value}
 				onSelect={onChangeHandler}
