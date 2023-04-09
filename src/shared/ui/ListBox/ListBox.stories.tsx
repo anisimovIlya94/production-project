@@ -22,12 +22,12 @@ const Template2: ComponentStory<typeof ListBox> = (args) => (
   
 )
 
-export const Bottom = Template.bind({})
-Bottom.args = {
+export const Normal = Template.bind({})
+Normal.args = {
 	items:[
-		{ content: Currency.EUR, value: Currency.EUR },
-		{ content: Currency.RUB, value: Currency.RUB },
-		{ content: Currency.USD, value: Currency.USD }
+		{ content: "123j12h3kj1h23", value: Currency.EUR },
+		{ content: "123j12h3kj1h23", value: Currency.RUB },
+		{ content: "123j12h3kj1h23", value: Currency.USD }
 	],
 	value:"RUB",
 	defaultValue:"Выберете валюту",
@@ -35,16 +35,58 @@ Bottom.args = {
 	onChange: action("onChange")
 }
 
-export const Top = Template2.bind({})
-Top.args = {
+export const TopLeft = Template2.bind({})
+TopLeft.args = {
 	onChange: action("onChange"),
 	items:[
-		{ content: Currency.EUR, value: Currency.EUR },
-		{ content: Currency.RUB, value: Currency.RUB },
-		{ content: Currency.USD, value: Currency.USD }
+		{ content: "123j12h3kj1h23", value: Currency.EUR },
+		{ content: "123j12h3kj1h23", value: Currency.RUB },
+		{ content: "123j12h3kj1h23", value: Currency.USD }
 	],
 	value:"RUB",
 	defaultValue:"Выберете валюту",
 	label: "Ваша валюта:",
-	direction: "top"
+	direction: "top left"
+}
+
+export const TopRight = Template2.bind({})
+TopRight.args = {
+	onChange: action("onChange"),
+	items:[
+		{ content: "123j12h3kj1h23", value: Currency.EUR },
+		{ content: "123j12h3kj1h23", value: Currency.RUB },
+		{ content: "123j12h3kj1h23", value: Currency.USD }
+	],
+	value:"RUB",
+	defaultValue:"Выберете валюту",
+	label: "Ваша валюта:",
+	direction: "top right"
+}
+
+export const BottomLeft = Template2.bind({})
+BottomLeft.args = {
+	onChange: action("onChange"),
+	items:[
+		{ content: "123j12h3kj1h23", value: Currency.EUR },
+		{ content: "123j12h3kj1h23", value: Currency.RUB },
+		{ content: "123j12h3kj1h23", value: Currency.USD }
+	],
+	value:"RUB",
+	defaultValue:"Выберете валюту",
+	label: "Ваша валюта:",
+	direction: "bottom left"
+}
+
+export const BottomRight = Template2.bind({})
+BottomRight.args = {
+	onChange: action("onChange"),
+	items:[
+		{ content: "123j12h3kj1h23", value: Currency.EUR },
+		{ content: "123j12h3kj1h23", value: Currency.RUB },
+		{ content: "123j12h3kj1h23", value: Currency.USD }
+	],
+	value:"RUB",
+	defaultValue:"Выберете валюту",
+	label: "Ваша валюта:",
+	direction: "bottom right"
 }

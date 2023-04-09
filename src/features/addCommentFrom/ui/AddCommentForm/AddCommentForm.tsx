@@ -1,4 +1,4 @@
-import { getAddCommentError, getAddCommentText } from "../../model/selectors/getAddCommentSelectors"
+import { getAddCommentText } from "../../model/selectors/getAddCommentSelectors"
 import { addCommentFormActions, addCommentFormReducer } from "../../model/slice/addCommentFormSlice"
 import { FC, useCallback } from "react"
 import { useTranslation } from "react-i18next"
@@ -24,7 +24,7 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
 	const { t } = useTranslation()
 	const dispatch = useAppDispatch()
 	const text = useSelector(getAddCommentText)
-	const error = useSelector(getAddCommentError)
+	// const error = useSelector(getAddCommentError)
 
 	const onChangeComment = useCallback((value: string) => {
 		dispatch(addCommentFormActions.setText(value))

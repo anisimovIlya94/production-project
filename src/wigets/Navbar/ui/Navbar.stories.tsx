@@ -30,5 +30,8 @@ export const Auth = Template.bind({})
 Auth.args = {}
 
 Auth.decorators = [StoreDecorator({
-	user: { authData: {} }
+	user: {
+		authData: {
+			avatar: "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+		} }
 })]

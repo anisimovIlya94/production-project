@@ -1,5 +1,4 @@
 import { FC, useCallback } from "react"
-import { useTranslation } from "react-i18next"
 import { classNames } from "shared/lib/classNames/classNames"
 import { Button, ButtonTheme } from "../Button/Button"
 import cls from "./Code.module.scss"
@@ -12,7 +11,6 @@ interface CodeProps {
 
 export const Code: FC<CodeProps> = (props) => {
 	const { className, text } = props
-	const { t } = useTranslation()
 
 	const onCopy = useCallback(() => {
 		navigator.clipboard.writeText(text)

@@ -36,7 +36,7 @@ export function CountrySelect(props: PropsWithChildren<CountrySelectProps>) {
 				defaultValue={t("Выберете страну")}
 				readonly={readonly}
 				label={t("Ваша страна:")}
-				direction="top"
+				direction="top right"
 			/>
 		</div>
 	)

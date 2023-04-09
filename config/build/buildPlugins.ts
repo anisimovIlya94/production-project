@@ -36,7 +36,7 @@ export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): web
 		plugins.push(
 			{
 				apply: (compiler: webpack.Compiler) => {
-					compiler.hooks.done.tap("DonePlugin", (stats) => {
+					compiler.hooks.done.tap("DonePlugin", (_) => {
 						console.log("Compile is done !")
 						setTimeout(() => {
 							process.exit(0)

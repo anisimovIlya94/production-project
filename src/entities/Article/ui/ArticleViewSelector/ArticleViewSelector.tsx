@@ -1,6 +1,5 @@
 import { ArticleView } from "../../model/types/article"
 import { FC } from "react"
-import { useTranslation } from "react-i18next"
 import { classNames } from "shared/lib/classNames/classNames"
 import cls from "./ArticleViewSelector.module.scss"
 import ListIcon from "shared/assets/icons/list-24-24.svg"
@@ -27,7 +26,6 @@ const viewTypes = [
 
 export const ArticleViewSelector: FC<ArticleViewSelectorProps> = (props) => {
 	const { className, view, setView } = props
-	const { t } = useTranslation()
 
 	return (
 		<div className={classNames(cls.articleViewSelector, {}, [className])}>

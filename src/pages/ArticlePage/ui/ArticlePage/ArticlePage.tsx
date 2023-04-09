@@ -13,7 +13,6 @@ import cls from "./ArticlePage.module.scss"
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage"
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters"
 import { useSearchParams } from "react-router-dom"
-import { useTranslation } from "react-i18next"
 
 interface ArticlePageProps {
   className?: string;
@@ -27,7 +26,6 @@ const ArticlePage: FC<ArticlePageProps> = (props) => {
 	const { className } = props
 	const dispatch = useAppDispatch()
 	const [searchParams] = useSearchParams()
-	const {t} = useTranslation()
 
 	const articles = useSelector(getArticlePageItems.selectAll)
 	const isLoading = useSelector(getArticlePageLoading)

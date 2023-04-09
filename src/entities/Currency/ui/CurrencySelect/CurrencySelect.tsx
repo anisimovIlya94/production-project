@@ -35,7 +35,7 @@ export function CurrencySelect(props: PropsWithChildren<CurrencySelectProps>) {
 				defaultValue={t("Выберете валюту")}
 				readonly={readonly}
 				label={t("Ваша валюта:")}
-				direction="top"
+				direction="top right"
 			/>                
 		</div>
 	)

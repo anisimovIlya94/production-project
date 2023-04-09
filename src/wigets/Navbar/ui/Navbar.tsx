@@ -10,6 +10,8 @@ import { getUserAuthData } from "entities/User/model/selectors/getUserAuthData/g
 import { userActions } from "entities/User"
 import { useNavigate } from "react-router-dom"
 import { RoutesPath } from "shared/config/routerConfig/routerConfig"
+import { Dropdown } from "shared/ui/Dropdown/Dropdown"
+import { Avatar } from "shared/ui/Avatar/Avatar"
 
 
 
@@ -47,9 +49,21 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
 				<Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.createLink} onClick={onCreateArticle}>
 					{t("Создать статью")}
 				</Button>
-				<Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogOut}>
-					{t("Выйти")}
-				</Button>
+				<Dropdown
+					className={cls.dropdown}
+					direction="bottom left"
+					trigger={<Avatar size={30} src={authData.avatar} />}
+					items={[
+						{
+							content: t("Профиль"),
+							href: RoutesPath.profile + authData.id
+						},
+						{
+							content: t("Выйти"),
+							onClick: onLogOut
+						}
+					]}
+				/>
 			</header>
 		)
 	}

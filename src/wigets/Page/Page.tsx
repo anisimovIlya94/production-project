@@ -1,7 +1,6 @@
 import { StateSchema } from "app/providers/StoreProvider"
 import { getScrollSaveByAdress, scrollSaveActions } from "features/scrollSave"
 import { FC, MutableRefObject, ReactNode, UIEvent, useRef } from "react"
-import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import { classNames } from "shared/lib/classNames/classNames"
@@ -19,7 +18,6 @@ interface PageProps {
 
 export const Page: FC<PageProps> = (props) => {
 	const { className, children, onScroll } = props
-	const { t } = useTranslation()
 	const dispatch = useAppDispatch()
 	const {pathname} = useLocation()
 	const scrollSave = useSelector((state: StateSchema) => getScrollSaveByAdress(state, pathname)) 
