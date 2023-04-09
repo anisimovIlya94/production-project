@@ -10,7 +10,7 @@ export default {
 	},
 } as ComponentMeta<typeof CountrySelect>
 
-const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />
+const Template: ComponentStory<typeof CountrySelect> = (args) => <div style={{marginTop: "150px"}}><CountrySelect {...args}/></div>
 
 export const Primary = Template.bind({})
 Primary.args = {}

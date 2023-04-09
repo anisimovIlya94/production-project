@@ -1,9 +1,9 @@
 import {classNames} from "shared/lib/classNames/classNames"
 
 import { PropsWithChildren, useCallback } from "react"
-import { Select } from "shared/ui/Select/Select"
 import { Country } from "../../model/types/country"
 import { useTranslation } from "react-i18next"
+import { ListBox } from "shared/ui/ListBox/ListBox"
 
 
 interface CountrySelectProps {
@@ -29,13 +29,15 @@ export function CountrySelect(props: PropsWithChildren<CountrySelectProps>) {
 
 	return (
 		<div className={classNames("", {}, [className])}>
-			<Select
+			<ListBox
+				onChange={onChangeHandler}
+				items={options}
 				value={value}
-				onSelect={onChangeHandler}
-				label={t("Ваша страна:")}
+				defaultValue={t("Выберете страну")}
 				readonly={readonly}
-				options={options} />
-                
+				label={t("Ваша страна:")}
+				direction="top"
+			/>
 		</div>
 	)
 }

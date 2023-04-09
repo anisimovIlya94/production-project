@@ -10,7 +10,7 @@ export default {
 	},
 } as ComponentMeta<typeof CurrencySelect>
 
-const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />
+const Template: ComponentStory<typeof CurrencySelect> = (args) => <div style={{marginTop: "150px"}}><CurrencySelect {...args}/></div>
 
 export const Primary = Template.bind({})
 Primary.args = {}

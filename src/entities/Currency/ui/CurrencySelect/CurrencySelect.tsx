@@ -1,9 +1,9 @@
 import {classNames} from "shared/lib/classNames/classNames"
 
 import { PropsWithChildren, useCallback } from "react"
-import { Select } from "shared/ui/Select/Select"
 import { Currency } from "../../model/types/currency"
 import { useTranslation } from "react-i18next"
+import { ListBox } from "shared/ui/ListBox/ListBox"
 
 interface CurrencySelectProps {
     className?: string;
@@ -28,13 +28,15 @@ export function CurrencySelect(props: PropsWithChildren<CurrencySelectProps>) {
 
 	return (
 		<div className={classNames("", {}, [className])}>
-			<Select
+			<ListBox
+				onChange={onChangeHandler}
+				items={options}
 				value={value}
-				onSelect={onChangeHandler}
-				label={t("Ваша валюта:")}
+				defaultValue={t("Выберете валюту")}
 				readonly={readonly}
-				options={options} />
-                
+				label={t("Ваша валюта:")}
+				direction="top"
+			/>                
 		</div>
 	)
 }

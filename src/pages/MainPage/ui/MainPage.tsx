@@ -5,10 +5,12 @@ import { Page } from "wigets/Page/Page"
 
 const MainPage = memo(() => {
 	const { t } = useTranslation()
-	return (<Page>
-		{t("Главная страница")}
-		<BugButton />
-	</Page> )
+	return (
+		<Page>
+			{t("Главная страница")}
+			<BugButton />
+		</Page>
+	)
 })
  
 export default MainPage
