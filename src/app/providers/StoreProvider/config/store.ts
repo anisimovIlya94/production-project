@@ -1,3 +1,4 @@
+import { rtkApi } from "shared/api/rtkApi"
 // import { NavigateOptions } from "react-router-dom"
 // import { To } from "react-router-dom"
 import { StateSchema, ThunkExtraArg } from "./StateSchema"
@@ -17,7 +18,8 @@ export function createReduxStore(
 		...asyncRedusers,
 		counter: counterReducer,
 		user: userReducer,
-		scrollSave: scrollSaveReducer
+		scrollSave: scrollSaveReducer,
+		[rtkApi.reducerPath]: rtkApi.reducer
 	}
 
 	const reducerManager = createReducerManager(rootReducers)
@@ -35,7 +37,7 @@ export function createReduxStore(
 			thunk: {
 				extraArgument: extraArg
 			}
-		})
+		}).concat(rtkApi.middleware)
 	})
 
 	//@ts-ignore

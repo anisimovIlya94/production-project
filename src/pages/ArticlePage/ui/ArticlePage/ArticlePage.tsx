@@ -1,5 +1,4 @@
-import { ArticleList } from "entities/Article"
-import { getArticlePageLoading, getArticlePageView } from "../../model/selectors/getArticlePageSelectors"
+import { getArticlePageView } from "../../model/selectors/getArticlePageSelectors"
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlePage/fetchNextArticlePage"
 import { articlePageReducer, getArticlePageItems } from "../../model/slice/articlePageSlice"
 import { FC, useCallback } from "react"
@@ -13,6 +12,7 @@ import cls from "./ArticlePage.module.scss"
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage"
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters"
 import { useSearchParams } from "react-router-dom"
+import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList"
 
 interface ArticlePageProps {
   className?: string;
@@ -26,10 +26,6 @@ const ArticlePage: FC<ArticlePageProps> = (props) => {
 	const { className } = props
 	const dispatch = useAppDispatch()
 	const [searchParams] = useSearchParams()
-
-	const articles = useSelector(getArticlePageItems.selectAll)
-	const isLoading = useSelector(getArticlePageLoading)
-	// const error = useSelector(getArticlePageError)
 	const view = useSelector(getArticlePageView)
 	
 	const onLoadNext = useCallback(() => {
@@ -45,7 +41,7 @@ const ArticlePage: FC<ArticlePageProps> = (props) => {
 		<DynamicModuleLoader reducers={reducers} isUnmount={false}>
 			<Page onScroll={onLoadNext} className={classNames(cls.articlePage, {}, [className])}>
 				<ArticlePageFilters view={view} />
-				<ArticleList className={cls.list} isLoading={isLoading} view={view} articles={articles}/>
+				<ArticleInfiniteList view={view} className={cls.list}/>
 			</Page>
 		</DynamicModuleLoader>
 	)

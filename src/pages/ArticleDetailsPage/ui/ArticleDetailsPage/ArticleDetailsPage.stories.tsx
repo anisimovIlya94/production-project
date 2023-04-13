@@ -385,9 +385,9 @@ const recommendations = {
 	}
 }
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({
+export const WithoutEdit = Template.bind({})
+WithoutEdit.args = {}
+WithoutEdit.decorators = [StoreDecorator({
 	articleDetails: {
 		data: article
 	},
@@ -395,6 +395,91 @@ Normal.decorators = [StoreDecorator({
 		recommendations: {
 			entities: recommendations,
 			ids: ["1", "2", "3", "4"]
+		},
+		comments: {
+			ids: ["1", "2", "3"],
+			entities: {
+				1: {
+					id:"1",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				},
+				2: {
+					id:"2",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				},
+				3: {
+					id:"3",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				}
+			}
 		}
 	}
+})]
+
+export const WithEdit = Template.bind({})
+WithEdit.args = {}
+WithEdit.decorators = [StoreDecorator({
+	articleDetails: {
+		data: article
+	},
+	articleDetailsPage: {
+		recommendations: {
+			entities: recommendations,
+			ids: ["1", "2", "3", "4"]
+		},
+		comments: {
+			ids: ["1", "2", "3"],
+			entities: {
+				1: {
+					id:"1",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				},
+				2: {
+					id:"2",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				},
+				3: {
+					id:"3",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				}
+			}
+		}
+	},
+	user: {
+		authData: {
+			id:"1",
+			username:"admin",
+			avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg",
+		}
+	},
 })]
