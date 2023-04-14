@@ -1,6 +1,6 @@
 import { getArticlePageView } from "../../model/selectors/getArticlePageSelectors"
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlePage/fetchNextArticlePage"
-import { articlePageReducer, getArticlePageItems } from "../../model/slice/articlePageSlice"
+import { articlePageReducer } from "../../model/slice/articlePageSlice"
 import { FC, useCallback } from "react"
 import { useSelector } from "react-redux"
 import { classNames } from "shared/lib/classNames/classNames"

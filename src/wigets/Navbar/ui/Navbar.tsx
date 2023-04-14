@@ -7,7 +7,7 @@ import { Button, ButtonTheme } from "shared/ui/Button/Button"
 import { LoginModal } from "features/AuthByUsername"
 import { useDispatch, useSelector } from "react-redux"
 import { getUserAuthData } from "entities/User/model/selectors/getUserAuthData/getUserAuthData"
-import { userActions } from "entities/User"
+import { isUserAdmin, isUserManager, userActions } from "entities/User"
 import { useNavigate } from "react-router-dom"
 import { RoutesPath } from "shared/config/routerConfig/routerConfig"
 import { Dropdown } from "shared/ui/Dropdown/Dropdown"
@@ -41,7 +41,12 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
 	
 	const onCreateArticle = useCallback(() => {
 		navigate(RoutesPath.article_details_create)
-	},[navigate])
+	}, [navigate])
+	
+	const isAdmin = useSelector(isUserAdmin)
+	const isManager = useSelector(isUserManager)
+
+	const isAdminPanelAvailable = isAdmin || isManager
 	
 	if (authData) {
 		return (
@@ -54,6 +59,14 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
 					direction="bottom left"
 					trigger={<Avatar size={30} src={authData.avatar} />}
 					items={[
+						...(
+							isAdminPanelAvailable
+								? [{
+									content: t("Админка"),
+									href: RoutesPath.admin_panel
+								}]
+								: []
+						),
 						{
 							content: t("Профиль"),
 							href: RoutesPath.profile + authData.id
