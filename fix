@@ -1,0 +1,103 @@
+
+> week-1@1.0.0 lint:ts
+> eslint "**/*.{ts,tsx}"
+
+
+D:\Frontend\UlbiTV course\Week 1\config\build\buildPlugins.ts
+  39:45  warning  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\Frontend\UlbiTV course\Week 1\config\jest\jest.config.ts
+  59:2  error  Mixed spaces and tabs  no-mixed-spaces-and-tabs
+  60:2  error  Mixed spaces and tabs  no-mixed-spaces-and-tabs
+  64:1  error  Mixed spaces and tabs  no-mixed-spaces-and-tabs
+
+D:\Frontend\UlbiTV course\Week 1\src\app\providers\ErrorBoundary\ui\ErrorBoundary.tsx
+  18:34  warning  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\Frontend\UlbiTV course\Week 1\src\app\types\global.d.ts
+  27:37  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Frontend\UlbiTV course\Week 1\src\features\editableProfileCard\ui\EditableProfileCard\EditableProfileCard.test.tsx
+   2:23  error  Strings must use doublequote                                quotes
+   6:1   error  В рамках одного слайса все пути должны быть относительными  fsd-aid-plugin/path-checker-fsd
+  12:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  13:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  14:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  15:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  16:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  17:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  18:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  19:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  20:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  24:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  25:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  26:1   error  Expected indentation of 3 tabs but found 12 spaces          indent
+  27:1   error  Expected indentation of 4 tabs but found 16 spaces          indent
+  28:1   error  Expected indentation of 5 tabs but found 20 spaces          indent
+  29:1   error  Expected indentation of 5 tabs but found 20 spaces          indent
+  30:1   error  Expected indentation of 5 tabs but found 20 spaces          indent
+  31:1   error  Expected indentation of 4 tabs but found 16 spaces          indent
+  32:1   error  Expected indentation of 4 tabs but found 16 spaces          indent
+  33:1   error  Expected indentation of 5 tabs but found 20 spaces          indent
+  34:1   error  Expected indentation of 6 tabs but found 24 spaces          indent
+  35:1   error  Expected indentation of 6 tabs but found 24 spaces          indent
+  36:1   error  Expected indentation of 5 tabs but found 20 spaces          indent
+  37:1   error  Expected indentation of 4 tabs but found 16 spaces          indent
+  38:1   error  Expected indentation of 3 tabs but found 12 spaces          indent
+  39:1   error  Expected indentation of 3 tabs but found 12 spaces          indent
+  40:1   error  Expected indentation of 4 tabs but found 16 spaces          indent
+  41:1   error  Expected indentation of 3 tabs but found 12 spaces          indent
+  42:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  43:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  44:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  45:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  47:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  49:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  50:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  52:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  53:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  55:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  56:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  58:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  59:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  61:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  64:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  65:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  67:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  68:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  70:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  72:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  75:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  77:1   error  Expected indentation of 1 tab but found 4 spaces            indent
+  78:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  79:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  81:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  82:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+  84:1   error  Expected indentation of 2 tabs but found 8 spaces           indent
+
+D:\Frontend\UlbiTV course\Week 1\src\pages\ArticlePage\ui\ArticlePage\ArticlePage.tsx
+  3:30  warning  'getArticlePageItems' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\Frontend\UlbiTV course\Week 1\src\shared\api\rtkApi.ts
+  16:14  warning  'builder' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\Frontend\UlbiTV course\Week 1\src\shared\lib\classNames\classNames.ts
+   9:14  warning  '_' is defined but never used  @typescript-eslint/no-unused-vars
+  10:22  warning  '_' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\Frontend\UlbiTV course\Week 1\src\shared\lib\hooks\useDebounce\useDebounce.ts
+  3:49  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  4:45  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  5:31  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Frontend\UlbiTV course\Week 1\src\shared\lib\hooks\useTrottle\useTrottle.ts
+  3:48  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  5:31  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Frontend\UlbiTV course\Week 1\src\shared\lib\tests\TestAsyncThunk\TestAsyncThunk.ts
+  14:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  18:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 73 problems (59 errors, 14 warnings)
+  55 errors and 0 warnings potentially fixable with the `--fix` option.
+

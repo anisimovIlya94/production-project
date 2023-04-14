@@ -81,8 +81,8 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
 						<Avatar src={data?.avatar} />
 					</HStack>
 			}
-			<Input readonly={readonly} onChange={onChangeFirstName} className={cls.input} value={data?.first} placeholder={t("Ваше имя")} />
-			<Input readonly={readonly} onChange={onChangeLastName} className={cls.input} value={data?.lastname} placeholder={t("Ваша фамилия")} />
+			<Input data-testid={"ProfileCard.firstname"}  readonly={readonly} onChange={onChangeFirstName} className={cls.input} value={data?.first} placeholder={t("Ваше имя")} />
+			<Input data-testid={"ProfileCard.lastname"} readonly={readonly} onChange={onChangeLastName} className={cls.input} value={data?.lastname} placeholder={t("Ваша фамилия")} />
 			<Input readonly={readonly} onChange={onChangeAge} className={cls.input} value={data?.age} placeholder={t("Ваш возраст")} />
 			<Input readonly={readonly} onChange={onChangeCity} className={cls.input} value={data?.city} placeholder={t("Ваш город")} />
 			<Input readonly={readonly} onChange={onChangeUsername} className={cls.input} value={data?.username} placeholder={t("Ваш никнейм")} />

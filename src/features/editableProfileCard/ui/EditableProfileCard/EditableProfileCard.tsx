@@ -95,7 +95,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 			<VStack gap='8' max className={classNames("", {}, [className])}>
 				<EditableProfileCardHeader/>
 				{validateErrors?.length && validateErrors.map((err: ValidateProfileError) => {
-					return <Text key={err} theme={TextTheme.ERROR} text={translatedValidateErrors[err]}/>
+					return <Text data-testid={"EditableProfileCard.Error"} key={err} theme={TextTheme.ERROR} text={translatedValidateErrors[err]}/>
 				})}
 				<ProfileCard
 					readonly={readonly}
