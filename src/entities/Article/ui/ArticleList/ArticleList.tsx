@@ -1,4 +1,4 @@
-import { Article, ArticleView } from "../../model/types/article"
+import { Article } from "../../model/types/article"
 import { FC, HTMLAttributeAnchorTarget, useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import { classNames } from "shared/lib/classNames/classNames"
@@ -6,6 +6,7 @@ import cls from "./ArticleList.module.scss"
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem"
 import { ArticleListItemSkeletons } from "../ArticleListItem/ArticleListItemSkeleton"
 import { Text, TextSize } from "shared/ui/Text/Text"
+import { ArticleView } from "../../model/consts/articleConsts"
 
 interface ArticleListProps {
   className?: string;
@@ -18,7 +19,6 @@ interface ArticleListProps {
 export const ArticleList: FC<ArticleListProps> = (props) => {
 	const { className, isLoading, view = ArticleView.SMALL, articles, target } = props
 	const { t } = useTranslation()
-	console.log(articles.length)
 
 	const getSkeletons = useCallback((view: ArticleView) => {
 		return new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((item, index) => {

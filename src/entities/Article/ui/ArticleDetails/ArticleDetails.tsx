@@ -15,11 +15,12 @@ import EyeIcon from "shared/assets/icons/eye-20-20.svg"
 import CalendarIcon from "shared/assets/icons/calendar-20-20.svg"
 import cls from "./ArticleDetails.module.scss"
 import { Icon } from "shared/ui/Icon/Icon"
-import { ArcticleBlocks, ArticleBlockType } from "../../model/types/article"
+import { ArcticleBlocks } from "../../model/types/article"
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent"
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent"
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent"
 import { useInitialEffects } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
+import { ArticleBlockType } from "../../model/consts/articleConsts"
 
 interface ArticleDetailsProps {
   className?: string;

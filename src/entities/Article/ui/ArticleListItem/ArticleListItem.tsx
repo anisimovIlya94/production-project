@@ -1,4 +1,4 @@
-import { ArticleView, Article, ArticleTextBlock, ArticleBlockType } from "../../model/types/article"
+import { Article, ArticleTextBlock } from "../../model/types/article"
 import { FC, HTMLAttributeAnchorTarget } from "react"
 import { classNames } from "shared/lib/classNames/classNames"
 import cls from "./ArticleListItem.module.scss"
@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next"
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent"
 import { RoutesPath } from "shared/config/routerConfig/routerConfig"
 import { AppLink } from "shared/ui/AppLink/AppLink"
+import { ArticleBlockType, ArticleView } from "../../model/consts/articleConsts"
 
 interface ArticleListItemProps {
   className?: string;
@@ -23,7 +24,7 @@ interface ArticleListItemProps {
 export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 	const { className, view, article, target } = props
 	const { t } = useTranslation()
-	const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as  ArticleTextBlock
+	const textBlock = article.blocks?.find((block) => block.type === ArticleBlockType.TEXT) as  ArticleTextBlock
 	const views = (
 		<>
 			<Text text={String(article.views)} className={cls.views} />
@@ -36,7 +37,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 	// },[navigate, article.id])
 
 	const date = <Text text={article.createdAt} className={cls.date} />
-	const types = <Text text={article.type.join(", ")} className={cls.types} />
+	const types = <Text text={article.type?.join(", ")} className={cls.types} />
 
 	if (view === ArticleView.BIG) {
 		return (

@@ -31,7 +31,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (
 
 	const comments = useSelector(getArticleDetailsComments.selectAll)
 	const isCommentsLoading = useSelector(getArticleDetailsCommentsLoading)
-	const onSetComment = useCallback((text) => {
+	const onSetComment = useCallback((text:string) => {
 		dispatch(addCommentForArticle(text))
 	},[dispatch])
 

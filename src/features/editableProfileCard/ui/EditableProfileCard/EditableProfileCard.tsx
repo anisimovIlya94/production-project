@@ -10,7 +10,6 @@ import { getProfileError } from "../../model/selectors/getProfileError/getProfil
 import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly"
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm"
 import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors"
-import { ValidateProfileError } from "../../model/types/profile"
 import { Currency } from "entities/Currency"
 import { Country } from "entities/Country"
 import { useInitialEffects } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
@@ -19,6 +18,7 @@ import { ProfileCard } from "entities/Profile"
 import { Text, TextTheme } from "shared/ui/Text/Text"
 import { VStack } from "shared/ui/Stack/VStack/VStack"
 import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader"
+import { ValidateProfileError } from "../../model/consts/profileConsts"
 
 interface EditableProfileCardProps {
     className?: string;

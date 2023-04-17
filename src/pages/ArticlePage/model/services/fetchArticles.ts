@@ -1,9 +1,8 @@
-import { ArticleType } from "entities/Article/model/types/article"
 import { getArticlePageLimit, getArticlePageNumber, getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType } from "./../selectors/getArticlePageSelectors"
 import { ThunkOptions } from "app/providers/StoreProvider/config/StateSchema"
 
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { Article } from "entities/Article"
+import { Article, ArticleType } from "entities/Article"
 import { addQueryParams } from "shared/lib/url/addQueryParams/addQueryParams"
 
 interface fetchArticlesProps {
