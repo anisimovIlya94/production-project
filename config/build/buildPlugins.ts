@@ -2,9 +2,11 @@ import HtmlWebpackPlugin from "html-webpack-plugin"
 import webpack from "webpack"
 import { BuildOptions } from "./types/config"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
-// import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import CopyPlugin from "copy-webpack-plugin"
+import CircularDependencyPlugin from "circular-dependency-plugin"
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin"
 
 export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): webpack.WebpackPluginInstance[] {
 	const plugins =  [
@@ -25,13 +27,26 @@ export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): web
 			patterns: [
 				{ from: paths.locales, to: paths.buildLocales },
 			],
-		})
+		}),
+		new ForkTsCheckerWebpackPlugin({
+			typescript: {
+				diagnosticOptions: {
+					semantic: true,
+					syntactic: true,
+				},
+				mode: "write-references",
+			},
+		}),
 	]
 	
 	if (isDev) {
 		plugins.push(new webpack.HotModuleReplacementPlugin())
-		// plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
+		plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
 		plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+		plugins.push(new CircularDependencyPlugin({
+			exclude: /node_modules/,
+			failOnError: true,
+		}))
 	} else {
 		plugins.push(
 			{
