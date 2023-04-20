@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Button } from "../Button/Button"
+import { Button } from "../../../Button/Button"
 import { Dropdown } from "./Dropdown"
 
 export default {
@@ -11,7 +11,9 @@ export default {
 } as ComponentMeta<typeof Dropdown>
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
-	<div style={{margin: "100px"}}><Dropdown {...args} /></div>
+	<div style={{ margin: "100px" }}>
+		<Dropdown {...args} />
+	</div>
 )
 
 export const Normal = Template.bind({})
@@ -19,15 +21,15 @@ Normal.args = {
 	trigger: <Button>open</Button>,
 	items: [
 		{
-			content: "first first"
+			content: "first first",
 		},
 		{
-			content: "second second"
+			content: "second second",
 		},
 		{
-			content: "third third"
+			content: "third third",
 		},
-	]
+	],
 }
 
 export const BottomLeft = Template.bind({})
@@ -36,15 +38,15 @@ BottomLeft.args = {
 	trigger: <Button>open</Button>,
 	items: [
 		{
-			content: "first first"
+			content: "first first",
 		},
 		{
-			content: "second second"
+			content: "second second",
 		},
 		{
-			content: "third third"
+			content: "third third",
 		},
-	]
+	],
 }
 
 export const TopLeft = Template.bind({})
@@ -53,15 +55,15 @@ TopLeft.args = {
 	trigger: <Button>open</Button>,
 	items: [
 		{
-			content: "first first"
+			content: "first first",
 		},
 		{
-			content: "second second"
+			content: "second second",
 		},
 		{
-			content: "third third"
+			content: "third third",
 		},
-	]
+	],
 }
 
 export const TopRight = Template.bind({})
@@ -70,13 +72,13 @@ TopRight.args = {
 	trigger: <Button>open</Button>,
 	items: [
 		{
-			content: "first first"
+			content: "first first",
 		},
 		{
-			content: "second second"
+			content: "second second",
 		},
 		{
-			content: "third third"
+			content: "third third",
 		},
-	]
+	],
 }

@@ -5,15 +5,13 @@ import { memo, PropsWithChildren, useCallback, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Button, ButtonTheme } from "shared/ui/Button/Button"
 import { LoginModal } from "features/AuthByUsername"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { getUserAuthData } from "entities/User/model/selectors/getUserAuthData/getUserAuthData"
-import { isUserAdmin, isUserManager, userActions } from "entities/User"
 import { useNavigate } from "react-router-dom"
 import { RoutesPath } from "shared/config/routerConfig/routerConfig"
-import { Dropdown } from "shared/ui/Dropdown/Dropdown"
-import { Avatar } from "shared/ui/Avatar/Avatar"
-
-
+import { HStack } from "shared/ui/Stack/HStack/HStack"
+import { NotificationButton } from "features/notificationButton"
+import { AvatarDropdown } from "features/avatarDropdown"
 
 interface NavbarProps {
   className?: string;
@@ -24,69 +22,50 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
 	const { t } = useTranslation()
 	const [isAuthModal, setIsAuthModal] = useState(false)
 	const authData = useSelector(getUserAuthData)
-	const dispatch = useDispatch()
 	const navigate = useNavigate()
 
 	const onCloseModal = useCallback(() => {
 		setIsAuthModal(false)
 	}, [])
-	
+
 	const onOpenModal = useCallback(() => {
 		setIsAuthModal(true)
 	}, [])
 
-	const onLogOut = useCallback(() => {
-		dispatch(userActions.logout())
-	}, [dispatch])
-	
 	const onCreateArticle = useCallback(() => {
 		navigate(RoutesPath.article_details_create)
 	}, [navigate])
-	
-	const isAdmin = useSelector(isUserAdmin)
-	const isManager = useSelector(isUserManager)
 
-	const isAdminPanelAvailable = isAdmin || isManager
-	
 	if (authData) {
 		return (
 			<header className={classNames(cls.Navbar, {}, [className])}>
-				<Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.createLink} onClick={onCreateArticle}>
+				<Button
+					theme={ButtonTheme.CLEAR_INVERTED}
+					className={cls.createLink}
+					onClick={onCreateArticle}
+				>
 					{t("Создать статью")}
 				</Button>
-				<Dropdown
-					className={cls.dropdown}
-					direction="bottom left"
-					trigger={<Avatar size={30} src={authData.avatar} />}
-					items={[
-						...(
-							isAdminPanelAvailable
-								? [{
-									content: t("Админка"),
-									href: RoutesPath.admin_panel
-								}]
-								: []
-						),
-						{
-							content: t("Профиль"),
-							href: RoutesPath.profile + authData.id
-						},
-						{
-							content: t("Выйти"),
-							onClick: onLogOut
-						}
-					]}
-				/>
+				<HStack gap="16" className={cls.actions}>
+					<NotificationButton/>
+					<AvatarDropdown/>
+				</HStack>
 			</header>
 		)
 	}
 
 	return (
 		<header className={classNames(cls.Navbar, {}, [className])}>
-			<Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onOpenModal}>
+			<Button
+				theme={ButtonTheme.CLEAR_INVERTED}
+				className={cls.links}
+				onClick={onOpenModal}
+			>
 				{t("Войти")}
 			</Button>
-			{isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>}
+			{isAuthModal && (
+				<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+			)}
 		</header>
 	)
 })

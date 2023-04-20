@@ -1,0 +1,22 @@
+.dropdown {
+  display: inline-block;
+}
+
+.menu {
+  position: absolute;
+  z-index: 10000;
+  border-radius: 12px;
+  border: 1px solid var(--card-bg);
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--primary-color);
+  width: 100%;
+}

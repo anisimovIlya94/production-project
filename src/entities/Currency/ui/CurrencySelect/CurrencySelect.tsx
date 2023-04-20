@@ -1,30 +1,33 @@
-import {classNames} from "shared/lib/classNames/classNames"
+import { classNames } from "shared/lib/classNames/classNames"
 
 import { PropsWithChildren, useCallback } from "react"
 import { Currency } from "../../model/types/currency"
 import { useTranslation } from "react-i18next"
-import { ListBox } from "shared/ui/ListBox/ListBox"
+import { ListBox } from "shared/ui/Popups/ui/ListBox/ListBox"
 
 interface CurrencySelectProps {
-    className?: string;
-    value?: Currency
-    onChange?: (value: Currency) => void
-    readonly?: boolean
+  className?: string;
+  value?: Currency;
+  onChange?: (value: Currency) => void;
+  readonly?: boolean;
 }
 
 const options = [
 	{ content: Currency.EUR, value: Currency.EUR },
 	{ content: Currency.RUB, value: Currency.RUB },
-	{ content: Currency.USD, value: Currency.USD }
+	{ content: Currency.USD, value: Currency.USD },
 ]
 
 export function CurrencySelect(props: PropsWithChildren<CurrencySelectProps>) {
 	const { className, onChange, value, readonly } = props
-	const {t} = useTranslation("profile")
+	const { t } = useTranslation("profile")
 
-	const onChangeHandler = useCallback((value: string) => {
-		onChange?.(value as Currency)
-	},[onChange])
+	const onChangeHandler = useCallback(
+		(value: string) => {
+			onChange?.(value as Currency)
+		},
+		[onChange]
+	)
 
 	return (
 		<div className={classNames("", {}, [className])}>
@@ -36,7 +39,7 @@ export function CurrencySelect(props: PropsWithChildren<CurrencySelectProps>) {
 				readonly={readonly}
 				label={t("Ваша валюта:")}
 				direction="top right"
-			/>                
+			/>
 		</div>
 	)
 }
