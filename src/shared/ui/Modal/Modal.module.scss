@@ -8,16 +8,19 @@
   opacity: 0;
   pointer-events: none;
   color: var(--primary-color);
-}
-
-.overlay {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--overlay-bc-color);
-  width: 100%;
-  height: 100%;
 }
+
+// .overlay {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: var(--overlay-bc-color);
+//   width: 100%;
+//   height: 100%;
+// }
 
 .content {
   background-color: var(--bc-color);

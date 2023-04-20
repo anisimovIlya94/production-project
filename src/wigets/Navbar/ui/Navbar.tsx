@@ -41,7 +41,7 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
 			<header className={classNames(cls.Navbar, {}, [className])}>
 				<Button
 					theme={ButtonTheme.CLEAR_INVERTED}
-					className={cls.createLink}
+					className={classNames(cls.createLink, {}, [className])}
 					onClick={onCreateArticle}
 				>
 					{t("Создать статью")}

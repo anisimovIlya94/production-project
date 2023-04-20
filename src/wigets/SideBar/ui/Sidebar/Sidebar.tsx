@@ -28,7 +28,8 @@ export const Sidebar = memo((props: PropsWithChildren<SidebarProps>) => {
 	return (
 		<section data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
 			<Button data-testid="sidebar-button"
-				square size={ButtonSize.L}
+				square
+				size={ButtonSize.L}
 				className={cls.collapseBtn}
 				theme={ButtonTheme.BACKGROUND_INVERTED}
 				onClick={toggleCollapse}
