@@ -1,8 +1,8 @@
 import { Suspense, useCallback } from "react"
 import { Routes, Route } from "react-router"
 import { FC } from "react"
-import { RoutePropsWithAuth, routerConfig } from "shared/config/routerConfig/routerConfig"
-import { PageLoader } from "shared/ui/PageLoader/PageLoader"
+import { RoutePropsWithAuth, routerConfig } from "@/shared/config/routerConfig/routerConfig"
+import { PageLoader } from "@/shared/ui/PageLoader/PageLoader"
 import { RequireAuth } from "./RequireAuth"
 
 const AppRouter: FC = () => {

@@ -1,5 +1,5 @@
 import { getArticlePageHasMore, getArticlePageLoading, getArticlePageNumber } from "./../../selectors/getArticlePageSelectors"
-import { ThunkOptions } from "app/providers/StoreProvider/config/StateSchema"
+import { ThunkOptions } from "@/app/providers/StoreProvider/config/StateSchema"
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { fetchArticles } from "../fetchArticles"
 import { articlePageActions } from "../../slice/articlePageSlice"

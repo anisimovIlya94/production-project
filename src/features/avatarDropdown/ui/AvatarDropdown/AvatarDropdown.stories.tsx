@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { UserRole } from "entities/User"
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
+import { UserRole } from "@/entities/User"
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 import { AvatarDropdown } from "./AvatarDropdown"
 
 export default {

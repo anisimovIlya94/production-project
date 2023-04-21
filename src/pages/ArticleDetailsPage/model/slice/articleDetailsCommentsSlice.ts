@@ -1,12 +1,12 @@
 import { ArticleDetailsCommentsSchema } from "./../types/ArticleDetailsCommentsSchema"
-import { StateSchema } from "app/providers/StoreProvider"
+import { StateSchema } from "@/app/providers/StoreProvider"
 
 import {
 	createEntityAdapter,
 	createSlice,
 	PayloadAction,
 } from "@reduxjs/toolkit"
-import { Comment } from "entities/Comment"
+import { Comment } from "@/entities/Comment"
 import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId"
   
 const commentsAdapter = createEntityAdapter<Comment>({

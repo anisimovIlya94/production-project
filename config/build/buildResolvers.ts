@@ -8,7 +8,9 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
 		modules: [
 			options.paths.src, "node_modules"
 		],
-		alias: {},
+		alias: {
+			"@": options.paths.src
+		},
 		mainFiles: ["index"]
 	}
 }

@@ -1,5 +1,5 @@
 import { fetchArticles } from "./../services/fetchArticles"
-import { StateSchema } from "app/providers/StoreProvider"
+import { StateSchema } from "@/app/providers/StoreProvider"
 
 import {
 	createEntityAdapter,
@@ -7,10 +7,10 @@ import {
 	PayloadAction,
 } from "@reduxjs/toolkit"
 import { ArticlePageSchema } from "../types/articlePage"
-import { Article, ArticleType, ArticleView } from "entities/Article"
-import { ARTICLE_VIEW_AUTH_KEY } from "shared/const/localstorage"
-import { ArticleSortField } from "entities/Article"
-import { SortOption } from "shared/lib/types/sort"
+import { Article, ArticleType, ArticleView } from "@/entities/Article"
+import { ARTICLE_VIEW_AUTH_KEY } from "@/shared/const/localstorage"
+import { ArticleSortField } from "@/entities/Article"
+import { SortOption } from "@/shared/lib/types/sort"
   
 const articlePageAdapter = createEntityAdapter<Article>({
 	selectId: (article) => article.id

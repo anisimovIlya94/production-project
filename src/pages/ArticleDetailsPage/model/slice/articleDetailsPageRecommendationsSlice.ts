@@ -1,11 +1,11 @@
-import { StateSchema } from "app/providers/StoreProvider"
+import { StateSchema } from "@/app/providers/StoreProvider"
 
 import {
 	createEntityAdapter,
 	createSlice,
 	PayloadAction,
 } from "@reduxjs/toolkit"
-import { Article } from "entities/Article"
+import { Article } from "@/entities/Article"
 import { ArticleDetailsPageRecommendationsSchema } from "../types/ArticleDetailsPageRecommendationsSchema"
 import { fetchRecommendations } from "../services/fetchRecommendations/fetchRecommendations"
   

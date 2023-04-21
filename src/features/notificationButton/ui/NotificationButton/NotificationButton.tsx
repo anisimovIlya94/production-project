@@ -1,13 +1,12 @@
-import { NotificationsList } from "entities/Notification"
+import { NotificationsList } from "@/entities/Notification"
 import { FC, useState } from "react"
-import { classNames } from "shared/lib/classNames/classNames"
-import { Button, ButtonTheme } from "shared/ui/Button/Button"
-import { Icon } from "shared/ui/Icon/Icon"
-import { Popover } from "shared/ui/Popups"
-import PopupIcon from "shared/assets/icons/PopupIcon.svg"
+import { classNames } from "@/shared/lib/classNames/classNames"
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button"
+import { Icon } from "@/shared/ui/Icon/Icon"
+import { Popover } from "@/shared/ui/Popups"
+import PopupIcon from "@/shared/assets/icons/PopupIcon.svg"
 import cls from "./NotificationButton.module.scss"
-import { Drawer } from "shared/ui/Drawer/Drawer"
-import { AnimationProvider } from "shared/lib/components/AnimationProvider"
+import { Drawer } from "@/shared/ui/Drawer/Drawer"
 
 interface NotificationButtonProps {
   className?: string;
@@ -46,11 +45,9 @@ export const NotificationButton: FC<NotificationButtonProps> = (props) => {
 		return (
 			<>
 				{trigger}
-				<AnimationProvider>
-					<Drawer isOpen={isOpen} onClose={drawerCloseHandler}>
-						<NotificationsList/>
-					</Drawer>
-				</AnimationProvider>
+				<Drawer isOpen={isOpen} onClose={drawerCloseHandler}>
+					<NotificationsList/>
+				</Drawer>
 			</>
 		)
 	}
