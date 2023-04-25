@@ -49,7 +49,7 @@ module.exports = {
 		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
 		"react-hooks/exhaustive-deps": "error", // Checks effect dependencies
 		"@typescript-eslint/no-var-requires": ["off"],
-		"fsd-aid-plugin/path-checker-fsd": "error",
+		"fsd-aid-plugin/path-checker-fsd": ["error", {alias: "@"}],
 	},
 	globals: {
 		__IS_DEV__: true,
