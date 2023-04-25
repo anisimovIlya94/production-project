@@ -11,6 +11,8 @@ import { articleDetailsPageReducer } from "../../model/slice"
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList"
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments"
+import { ArticleRating } from "@/features/articleRating"
+import { VStack } from "@/shared/ui/Stack/VStack/VStack"
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -33,10 +35,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 	return (
 		<DynamicModuleLoader reducers={reducers} isUnmount>
 			<Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-				<ArticleDetailsPageHeader/>
-				<ArticleDetails />
-				<ArticleRecommendationsList/>
-				<ArticleDetailsComments id={id}/>
+				<VStack gap="16" max>
+					<ArticleDetailsPageHeader/>
+					<ArticleDetails />
+					<ArticleRating articleId={id}/>
+					<ArticleRecommendationsList/>
+					<ArticleDetailsComments id={id}/>
+				</VStack>
 			</Page>
 		</DynamicModuleLoader>
 	)

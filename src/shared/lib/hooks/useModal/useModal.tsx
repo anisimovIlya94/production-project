@@ -3,7 +3,7 @@ import { MutableRefObject, useCallback, useEffect, useRef, useState } from "reac
 interface useModalProps {
     animationDelay: number
     isOpen?: boolean;
-	onClose: () => void;
+	onClose?: () => void;
 }
 
 export function useModal(props: useModalProps) {
@@ -20,7 +20,7 @@ export function useModal(props: useModalProps) {
 	const close = useCallback(() => {
 		setIsClosing(true)
 		timerRef.current = setTimeout(() => {
-			onClose()
+			onClose?.()
 			setIsClosing(false)
 		}, animationDelay)
 	},[onClose, animationDelay])

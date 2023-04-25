@@ -10,7 +10,7 @@ interface DrawerProps {
   className?: string;
   children: ReactNode;
   isOpen?: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 const height = window.innerHeight - 100

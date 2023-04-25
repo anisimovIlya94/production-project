@@ -443,6 +443,12 @@ WithoutEdit.parameters = {
 				{ ...article, id: "3" },
 			],
 		},
+		{
+			url: `${__API__}/article-rating?userId=1&articleId=1`,
+			method: "GET",
+			status: 200,
+			response: [],
+		},
 	],
 }
 
@@ -508,6 +514,90 @@ WithEdit.parameters = {
 				{ ...article, id: "1" },
 				{ ...article, id: "2" },
 				{ ...article, id: "3" },
+			],
+		},
+		{
+			url: `${__API__}/article-rating?userId=1&articleId=1`,
+			method: "GET",
+			status: 200,
+			response: [],
+		},
+	],
+}
+
+export const WithRatingSelected = Template.bind({})
+WithRatingSelected.args = {}
+WithRatingSelected.decorators = [StoreDecorator({
+	articleDetails: {
+		data: article
+	},
+	articleDetailsPage: {
+		recommendations: {
+			entities: recommendations,
+			ids: ["1", "2", "3", "4"]
+		},
+		comments: {
+			ids: ["1", "2", "3"],
+			entities: {
+				1: {
+					id:"1",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				},
+				2: {
+					id:"2",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				},
+				3: {
+					id:"3",
+					text:"some comment",
+					user: {
+						id:"1",
+						username: "admin",
+						avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg"
+					}
+				}
+			}
+		}
+	},
+	user: {
+		authData: {
+			id:"1",
+			username:"admin",
+			avatar:"https://cq.ru/storage/uploads/posts/961737/fr.jpg",
+		}
+	},
+})]
+WithRatingSelected.parameters = {
+	mockData: [
+		{
+			url: `${__API__}/articles?_limit=3`,
+			method: "GET",
+			status: 200,
+			response: [
+				{ ...article, id: "1" },
+				{ ...article, id: "2" },
+				{ ...article, id: "3" },
+			],
+		},
+		{
+			url: `${__API__}/article-rating?userId=1&articleId=1`,
+			method: "GET",
+			status: 200,
+			response: [
+				{
+					rate: 4,
+					feedback: "Отличная статья",
+				},
 			],
 		},
 	],

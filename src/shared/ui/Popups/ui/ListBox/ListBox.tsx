@@ -47,7 +47,7 @@ export const ListBox: FC<ListBoxProps> = (props) => {
 				value={value}
 				onChange={onChange}
 			>
-				<HListBox.Button disabled={readonly}>
+				<HListBox.Button as="div">
 					<Button disabled={readonly}>{value ?? defaultValue}</Button>
 				</HListBox.Button>
 				<HListBox.Options

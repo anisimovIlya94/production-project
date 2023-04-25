@@ -11,6 +11,7 @@ import { addCommentForArticle } from "../../model/services/AddCommentForArticle/
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { useInitialEffects } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect"
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId"
+import { VStack } from "@/shared/ui/Stack/VStack/VStack"
 
 interface ArticleDetailsCommentsProps {
   className?: string;
@@ -36,7 +37,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (
 	},[dispatch])
 
 	return (
-		<div className={classNames("", {}, [className])}>
+		<VStack max gap="16" className={classNames("", {}, [className])}>
 			<Text title={t("Комментарии")} />
 			<Suspense fallback="">
 				<AddCommentForm
@@ -44,6 +45,6 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (
 				/>
 			</Suspense>
 			<CommentList isLoading={isCommentsLoading} comments={comments} />
-		</div>
+		</VStack>
 	)
 }

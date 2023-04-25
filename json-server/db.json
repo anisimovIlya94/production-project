@@ -1464,6 +1464,56 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     }
   ],
+  "article-rating": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Отличная статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 3,
+      "feedback": "Отличная статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "dsdsd",
+      "id": "Tb12cm4"
+    },
+    {
+      "articleId": "16",
+      "userId": "1",
+      "rate": 5,
+      "feedback": "Awesome!",
+      "id": "cxBXwEf"
+    },
+    {
+      "articleId": "16",
+      "userId": "1",
+      "rate": 5,
+      "feedback": "awesome!",
+      "id": "btsYovf"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "rate": 5,
+      "id": "8oqm4Qk"
+    },
+    {
+      "articleId": "13",
+      "userId": "1",
+      "rate": 5,
+      "feedback": "авыв",
+      "id": "52qS11H"
+    }
+  ],
   "profile": [
     {
       "id": "1",
@@ -1471,7 +1521,7 @@
       "lastname": "Илья",
       "age": 28,
       "currency": "RUB",
-      "country": "Belarus",
+      "country": "Kazakhstan",
       "city": "EkB",
       "username": "admin",
       "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"

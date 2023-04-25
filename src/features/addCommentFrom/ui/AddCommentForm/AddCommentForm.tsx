@@ -9,6 +9,7 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Button } from "@/shared/ui/Button/Button"
 import { Input } from "@/shared/ui/Input/Input"
 import cls from "./AddCommentForm.module.scss"
+import { HStack } from "@/shared/ui/Stack/HStack/HStack"
 
 interface AddCommentFormProps {
   className?: string;
@@ -37,7 +38,7 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<div className={classNames(cls.addCommentForm, {}, [className])}>
+			<HStack align="center" justify="between" max className={classNames(cls.addCommentForm, {}, [className])}>
 				<Input
 					className={cls.input}
 					onChange={onChangeComment}
@@ -45,7 +46,7 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
 					value={text}
 				/>
 				<Button onClick={onSetCommentHandler}>{t("Отправить")}</Button>
-			</div>
+			</HStack>
 		</DynamicModuleLoader>
 	)
 }

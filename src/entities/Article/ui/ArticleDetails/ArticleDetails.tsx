@@ -21,6 +21,7 @@ import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent"
 import { useInitialEffects } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect"
 import { ArticleBlockType } from "../../model/consts/articleConsts"
+import { VStack } from "@/shared/ui/Stack/VStack/VStack"
 
 interface ArticleDetailsProps {
   className?: string;
@@ -116,9 +117,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
 
 	return (
 		<DynamicModuleLoader isUnmount reducers={reducers}>
-			<div className={classNames(cls.articleDetails, {}, [className])}>
+			<VStack max className={classNames(cls.articleDetails, {}, [className])}>
 				{content}
-			</div>
+			</VStack>
 		</DynamicModuleLoader>
 	)
 }

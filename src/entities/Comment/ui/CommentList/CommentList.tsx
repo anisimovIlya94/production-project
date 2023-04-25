@@ -2,9 +2,9 @@ import { Comment } from "../../model/types/comment"
 import { FC } from "react"
 import { useTranslation } from "react-i18next"
 import { classNames } from "@/shared/lib/classNames/classNames"
-import cls from "./CommentList.module.scss"
 import { Text } from "@/shared/ui/Text/Text"
 import { CommentCard } from "../CommentCard/CommentCard"
+import { VStack } from "@/shared/ui/Stack/VStack/VStack"
 
 interface CommentListProps {
   className?: string;
@@ -18,22 +18,22 @@ export const CommentList: FC<CommentListProps> = (props) => {
 
 	if (isLoading) {
 		return (
-			<div className={classNames(cls.commentList, {}, [className])}>
+			<VStack gap="16" max className={classNames("", {}, [className])}>
 				<CommentCard isLoading={isLoading} />
 				<CommentCard isLoading={isLoading} />
 				<CommentCard isLoading={isLoading}/>
-			</div>
+			</VStack>
 		)
 	}
 
 	return (
-		<div className={classNames(cls.commentList, {}, [className])}>
+		<VStack gap="16" max className={classNames("", {}, [className])}>
 			{comments?.length
 				? comments.map((comment) => (
 					<CommentCard key={comment.id} isLoading={isLoading} comment={comment}/>
 				))
 				: <Text title={t("Комментарии отсутствуют")}/>
 			}
-		</div>
+		</VStack>
 	)
 }
