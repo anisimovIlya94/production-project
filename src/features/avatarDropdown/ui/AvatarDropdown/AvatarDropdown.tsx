@@ -1,5 +1,5 @@
 import { isUserAdmin, isUserManager, userActions } from "@/entities/User"
-import { getUserAuthData } from "@/entities/User/model/selectors/getUserAuthData/getUserAuthData"
+import { getUserAuthData } from "@/entities/User"
 import { FC, useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import { useDispatch, useSelector } from "react-redux"

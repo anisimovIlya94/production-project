@@ -1,5 +1,5 @@
-import { Country } from "@/entities/Country/model/types/country"
-import { TestAsyncThunk } from "./../../../../../shared/lib/tests/TestAsyncThunk/TestAsyncThunk"
+import { Country } from "@/entities/Country"
+import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk"
 import { fetchProfileData } from "./fetchProfileData"
 import { Currency } from "@/entities/Currency"
 

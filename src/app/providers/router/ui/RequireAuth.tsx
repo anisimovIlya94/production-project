@@ -1,5 +1,5 @@
 import { getUserRole, UserRole } from "@/entities/User"
-import { getUserAuthData } from "@/entities/User/model/selectors/getUserAuthData/getUserAuthData"
+import { getUserAuthData } from "@/entities/User"
 import { useMemo } from "react"
 import { useSelector } from "react-redux"
 import { Navigate, useLocation } from "react-router-dom"

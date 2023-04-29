@@ -6,7 +6,7 @@ import { memo, PropsWithChildren } from "react"
 import { SidebarItemType } from "../model/types/sidebar"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
-import { getUserAuthData } from "@/entities/User/model/selectors/getUserAuthData/getUserAuthData"
+import { getUserAuthData } from "@/entities/User"
 import { HStack } from "@/shared/ui/Stack/HStack/HStack"
 
 interface SidebarItemProps {

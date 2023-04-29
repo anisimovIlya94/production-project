@@ -6,7 +6,7 @@ import { Sidebar } from "@/wigets/SideBar"
 import { Suspense, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { userActions } from "@/entities/User"
-import { getUserInited } from "@/entities/User/model/selectors/getUserInited/getUserInited"
+import { getUserInited } from "@/entities/User"
 
 const App = () => {
 	const { theme } = useThemes()

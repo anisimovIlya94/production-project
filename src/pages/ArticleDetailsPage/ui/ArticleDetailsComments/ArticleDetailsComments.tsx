@@ -1,5 +1,5 @@
 import { CommentList } from "@/entities/Comment"
-import AddCommentForm from "@/features/addCommentFrom/ui/AddCommentForm/AddCommentForm"
+import { AddCommentForm } from "@/features/addCommentFrom"
 import { getArticleDetailsComments } from "../../model/slice/articleDetailsCommentsSlice"
 import { FC, Suspense, useCallback } from "react"
 import { useTranslation } from "react-i18next"

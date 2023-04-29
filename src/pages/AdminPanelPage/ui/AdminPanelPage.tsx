@@ -1,14 +1,10 @@
 import { memo } from "react"
 import { useTranslation } from "react-i18next"
-import { Page } from "@/wigets/Page/Page"
+import { Page } from "@/wigets/Page"
 
 const AdminPanelPage = memo(() => {
 	const { t } = useTranslation()
-	return (
-		<Page>
-			{t("Страница администрирования")}
-		</Page>
-	)
+	return <Page>{t("Страница администрирования")}</Page>
 })
 
 export default AdminPanelPage

@@ -3,7 +3,7 @@ import { FC, useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import { useArticleRating, useRateArticle } from "../../api/articleRatingApi"
 import { useSelector } from "react-redux"
-import { getUserAuthData } from "@/entities/User/model/selectors/getUserAuthData/getUserAuthData"
+import { getUserAuthData } from "@/entities/User"
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton"
 
 export interface ArticleRatingProps {

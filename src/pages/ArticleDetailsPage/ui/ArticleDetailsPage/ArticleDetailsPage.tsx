@@ -2,11 +2,14 @@ import { ArticleDetails } from "@/entities/Article"
 import { FC } from "react"
 import { useTranslation } from "react-i18next"
 import { classNames } from "@/shared/lib/classNames/classNames"
-import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
+import {
+	DynamicModuleLoader,
+	ReducersList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import { Text } from "@/shared/ui/Text/Text"
 import cls from "./ArticleDetailsPage.module.scss"
 import { useParams } from "react-router-dom"
-import { Page } from "@/wigets/Page/Page"
+import { Page } from "@/wigets/Page"
 import { articleDetailsPageReducer } from "../../model/slice"
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList"
@@ -19,28 +22,28 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-	articleDetailsPage: articleDetailsPageReducer
+	articleDetailsPage: articleDetailsPageReducer,
 }
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 	const { className } = props
 	const { t } = useTranslation()
-	
+
 	const { id = "1" } = useParams<{ id: string }>()
 
 	if (!id) {
-		return <Text title={t("Страница не найдена")}/>
+		return <Text title={t("Страница не найдена")} />
 	}
 
 	return (
 		<DynamicModuleLoader reducers={reducers} isUnmount>
 			<Page className={classNames(cls.articleDetailsPage, {}, [className])}>
 				<VStack gap="16" max>
-					<ArticleDetailsPageHeader/>
+					<ArticleDetailsPageHeader />
 					<ArticleDetails />
-					<ArticleRating articleId={id}/>
-					<ArticleRecommendationsList/>
-					<ArticleDetailsComments id={id}/>
+					<ArticleRating articleId={id} />
+					<ArticleRecommendationsList />
+					<ArticleDetailsComments id={id} />
 				</VStack>
 			</Page>
 		</DynamicModuleLoader>
