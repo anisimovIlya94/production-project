@@ -2,11 +2,11 @@ import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { ProfileCard } from "./ProfileCard"
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Theme } from "@/app/providers/themeProvider"
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 import { Currency } from "@/entities/Currency"
 import { Country } from "@/entities/Country"
-import AvatarImage from "../../../../shared/assets/tests/storybookAvatar.jpeg"
+import AvatarImage from "@/shared/assets/tests/storybookAvatar.jpeg"
+import { Theme } from "@/shared/const/theme"
 
 export default {
 	title: "entities/ProfileCard",
@@ -42,4 +42,4 @@ export const IsLoading = Template.bind({})
 IsLoading.args = { isLoading: true }
 
 export const withError = Template.bind({})
-withError.args = {error: ""}
+withError.args = {error: "sdfsdfsdfsdf"}

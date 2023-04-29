@@ -1,5 +1,5 @@
 import { getArticlePageLimit, getArticlePageNumber, getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType } from "./../selectors/getArticlePageSelectors"
-import { ThunkOptions } from "@/app/providers/StoreProvider/config/StateSchema"
+import { ThunkOptions } from "@/app/providers/StoreProvider"
 
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { Article, ArticleType } from "@/entities/Article"

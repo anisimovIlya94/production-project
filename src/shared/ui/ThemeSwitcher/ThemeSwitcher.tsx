@@ -3,8 +3,9 @@ import DarkIcon from "../../assets/icons/theme-dark.svg"
 import LightIcon from "../../assets/icons/theme-light.svg"
 
 import { memo, PropsWithChildren } from "react"
-import { Theme, useThemes } from "@/app/providers/themeProvider"
 import { Button, ButtonTheme } from "../Button/Button"
+import { useThemes } from "@/shared/lib/hooks/useThemes/useThemes"
+import { Theme } from "@/shared/const/theme"
 
 interface ThemeSwitcherProps {
   className?: string;

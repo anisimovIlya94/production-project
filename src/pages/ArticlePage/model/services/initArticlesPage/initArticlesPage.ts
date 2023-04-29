@@ -1,4 +1,4 @@
-import { ThunkOptions } from "@/app/providers/StoreProvider/config/StateSchema"
+import { ThunkOptions } from "@/app/providers/StoreProvider"
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { getArticlePageInit } from "../../selectors/getArticlePageSelectors"
 import { articlePageActions } from "../../slice/articlePageSlice"

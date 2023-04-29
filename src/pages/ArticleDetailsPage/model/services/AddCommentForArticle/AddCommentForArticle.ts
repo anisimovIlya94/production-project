@@ -1,6 +1,6 @@
-import { getUserAuthData } from "./../../../../../entities/User/model/selectors/getUserAuthData/getUserAuthData"
-import { getArticleDetailsData } from "./../../../../../entities/Article/model/selectors/getArticleDetailsData"
-import { ThunkOptions } from "@/app/providers/StoreProvider/config/StateSchema"
+import { getUserAuthData } from "@/entities/User"
+import { getArticleDetailsData } from "@/entities/Article"
+import { ThunkOptions } from "@/app/providers/StoreProvider"
 
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { Comment } from "@/entities/Comment"

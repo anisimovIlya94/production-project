@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Currency } from "@/entities/Currency"
 import { ListBox } from "./ListBox"
 import { action } from "@storybook/addon-actions"
 
@@ -25,9 +24,9 @@ const Template2: ComponentStory<typeof ListBox> = (args) => (
 export const Normal = Template.bind({})
 Normal.args = {
 	items:[
-		{ content: "123j12h3kj1h23", value: Currency.EUR },
-		{ content: "123j12h3kj1h23", value: Currency.RUB },
-		{ content: "123j12h3kj1h23", value: Currency.USD }
+		{ content: "123j12h3kj1h23", value: "EUR" },
+		{ content: "123j12h3kj1h23", value: "RUB" },
+		{ content: "123j12h3kj1h23", value: "USD" }
 	],
 	value:"RUB",
 	defaultValue:"Выберете валюту",
@@ -39,9 +38,9 @@ export const TopLeft = Template2.bind({})
 TopLeft.args = {
 	onChange: action("onChange"),
 	items:[
-		{ content: "123j12h3kj1h23", value: Currency.EUR },
-		{ content: "123j12h3kj1h23", value: Currency.RUB },
-		{ content: "123j12h3kj1h23", value: Currency.USD }
+		{ content: "123j12h3kj1h23", value: "EUR" },
+		{ content: "123j12h3kj1h23", value: "RUB" },
+		{ content: "123j12h3kj1h23", value: "USD" }
 	],
 	value:"RUB",
 	defaultValue:"Выберете валюту",
@@ -53,9 +52,9 @@ export const TopRight = Template2.bind({})
 TopRight.args = {
 	onChange: action("onChange"),
 	items:[
-		{ content: "123j12h3kj1h23", value: Currency.EUR },
-		{ content: "123j12h3kj1h23", value: Currency.RUB },
-		{ content: "123j12h3kj1h23", value: Currency.USD }
+		{ content: "123j12h3kj1h23", value: "EUR" },
+		{ content: "123j12h3kj1h23", value: "RUB" },
+		{ content: "123j12h3kj1h23", value: "USD" }
 	],
 	value:"RUB",
 	defaultValue:"Выберете валюту",
@@ -67,9 +66,9 @@ export const BottomLeft = Template2.bind({})
 BottomLeft.args = {
 	onChange: action("onChange"),
 	items:[
-		{ content: "123j12h3kj1h23", value: Currency.EUR },
-		{ content: "123j12h3kj1h23", value: Currency.RUB },
-		{ content: "123j12h3kj1h23", value: Currency.USD }
+		{ content: "123j12h3kj1h23", value: "EUR" },
+		{ content: "123j12h3kj1h23", value: "RUB" },
+		{ content: "123j12h3kj1h23", value: "USD" }
 	],
 	value:"RUB",
 	defaultValue:"Выберете валюту",
@@ -81,9 +80,9 @@ export const BottomRight = Template2.bind({})
 BottomRight.args = {
 	onChange: action("onChange"),
 	items:[
-		{ content: "123j12h3kj1h23", value: Currency.EUR },
-		{ content: "123j12h3kj1h23", value: Currency.RUB },
-		{ content: "123j12h3kj1h23", value: Currency.USD }
+		{ content: "123j12h3kj1h23", value: "EUR" },
+		{ content: "123j12h3kj1h23", value: "RUB" },
+		{ content: "123j12h3kj1h23", value: "USD" }
 	],
 	value:"RUB",
 	defaultValue:"Выберете валюту",

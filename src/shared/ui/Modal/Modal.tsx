@@ -3,9 +3,9 @@ import cls from "./Modal.module.scss"
 
 import { PropsWithChildren, ReactNode } from "react"
 import { Portal } from "../Portal/Portal"
-import { useThemes } from "@/app/providers/themeProvider"
 import { Overlay } from "../Overlay/Overlay"
 import { useModal } from "@/shared/lib/hooks/useModal/useModal"
+import { useThemes } from "@/shared/lib/hooks/useThemes/useThemes"
 
 interface ModalProps {
     className?: string;
