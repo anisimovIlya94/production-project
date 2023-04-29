@@ -4,10 +4,10 @@ import { memo, useCallback } from "react"
 import { useNavigate } from "react-router-dom"
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button"
 import { useSelector } from "react-redux"
-import { RoutesPath } from "@/shared/config/routerConfig/routerConfig"
 import { HStack } from "@/shared/ui/Stack/HStack/HStack"
 import { getArticleDetailsCanEdit } from "../../model/selectors/getArticleDetailsCanEdit"
 import { getArticleDetailsData } from "@/entities/Article"
+import { RoutesPath } from "@/shared/const/router"
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;

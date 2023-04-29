@@ -3,10 +3,10 @@ import { getUserAuthData } from "@/entities/User"
 import { FC, useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import { useDispatch, useSelector } from "react-redux"
-import { RoutesPath } from "@/shared/config/routerConfig/routerConfig"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { Avatar } from "@/shared/ui/Avatar/Avatar"
 import { Dropdown } from "@/shared/ui/Popups"
+import { RoutesPath } from "@/shared/const/router"
 
 interface AvatarDropdownProps {
   className?: string;

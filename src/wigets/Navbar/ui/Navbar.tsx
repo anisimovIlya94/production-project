@@ -8,10 +8,10 @@ import { LoginModal } from "@/features/AuthByUsername"
 import { useSelector } from "react-redux"
 import { getUserAuthData } from "@/entities/User"
 import { useNavigate } from "react-router-dom"
-import { RoutesPath } from "@/shared/config/routerConfig/routerConfig"
 import { HStack } from "@/shared/ui/Stack/HStack/HStack"
 import { NotificationButton } from "@/features/notificationButton"
 import { AvatarDropdown } from "@/features/avatarDropdown"
+import { RoutesPath } from "@/shared/const/router"
 
 interface NavbarProps {
   className?: string;
