@@ -2,16 +2,16 @@ import {classNames} from "@/shared/lib/classNames/classNames"
 import cls from "./ProfileCard.module.scss"
 
 import type { PropsWithChildren } from "react"
-import { Text, TextAlign, TextTheme } from "@/shared/ui/Text/Text"
+import { Text, TextAlign, TextTheme } from "@/shared/ui/Text"
 import { useTranslation } from "react-i18next"
-import { Input } from "@/shared/ui/Input/Input"
+import { Input } from "@/shared/ui/Input"
 import { Profile } from "../../model/types/profile"
-import { Loader } from "@/shared/ui/Loader/Loader"
-import { Avatar } from "@/shared/ui/Avatar/Avatar"
+import { Loader } from "@/shared/ui/Loader"
+import { Avatar } from "@/shared/ui/Avatar"
 import { Currency, CurrencySelect } from "@/entities/Currency"
 import { CountrySelect, Country } from "@/entities/Country"
-import { VStack } from "@/shared/ui/Stack/VStack/VStack"
-import { HStack } from "@/shared/ui/Stack/HStack/HStack"
+import { VStack } from "@/shared/ui/Stack"
+import { HStack } from "@/shared/ui/Stack"
 
 
 interface ProfileCardProps {

@@ -5,13 +5,13 @@ import { FC, Suspense, useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { classNames } from "@/shared/lib/classNames/classNames"
-import { Text } from "@/shared/ui/Text/Text"
+import { Text } from "@/shared/ui/Text"
 import { getArticleDetailsCommentsLoading } from "../../model/selectors/getArticleDetailsCommentsData"
 import { addCommentForArticle } from "../../model/services/AddCommentForArticle/AddCommentForArticle"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { useInitialEffects } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect"
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId"
-import { VStack } from "@/shared/ui/Stack/VStack/VStack"
+import { VStack } from "@/shared/ui/Stack"
 
 interface ArticleDetailsCommentsProps {
   className?: string;

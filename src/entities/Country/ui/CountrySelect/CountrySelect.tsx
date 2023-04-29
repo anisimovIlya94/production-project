@@ -3,7 +3,7 @@ import { classNames } from "@/shared/lib/classNames/classNames"
 import { PropsWithChildren, useCallback } from "react"
 import { Country } from "../../model/types/country"
 import { useTranslation } from "react-i18next"
-import { ListBox } from "@/shared/ui/Popups/ui/ListBox/ListBox"
+import { ListBox } from "@/shared/ui/Popups"
 
 interface CountrySelectProps {
   className?: string;

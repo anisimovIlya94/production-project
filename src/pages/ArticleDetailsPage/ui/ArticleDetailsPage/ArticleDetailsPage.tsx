@@ -6,7 +6,7 @@ import {
 	DynamicModuleLoader,
 	ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
-import { Text } from "@/shared/ui/Text/Text"
+import { Text } from "@/shared/ui/Text"
 import cls from "./ArticleDetailsPage.module.scss"
 import { useParams } from "react-router-dom"
 import { Page } from "@/wigets/Page"
@@ -15,7 +15,7 @@ import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDet
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList"
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments"
 import { ArticleRating } from "@/features/articleRating"
-import { VStack } from "@/shared/ui/Stack/VStack/VStack"
+import { VStack } from "@/shared/ui/Stack"
 
 interface ArticleDetailsPageProps {
   className?: string;

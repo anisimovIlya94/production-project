@@ -1,5 +1,5 @@
 import { classNames } from "@/shared/lib/classNames/classNames"
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink"
+import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink"
 import cls from "./SidebarItem.module.scss"
 
 import { memo, PropsWithChildren } from "react"
@@ -7,7 +7,7 @@ import { SidebarItemType } from "../model/types/sidebar"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { getUserAuthData } from "@/entities/User"
-import { HStack } from "@/shared/ui/Stack/HStack/HStack"
+import { HStack } from "@/shared/ui/Stack"
 
 interface SidebarItemProps {
     item: SidebarItemType

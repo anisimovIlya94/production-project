@@ -2,9 +2,9 @@ import { classNames } from "@/shared/lib/classNames/classNames"
 import { memo, PropsWithChildren } from "react"
 import { useParams } from "react-router-dom"
 import { Page } from "@/wigets/Page"
-import { VStack } from "@/shared/ui/Stack/VStack/VStack"
+import { VStack } from "@/shared/ui/Stack"
 import { EditableProfileCard } from "@/features/editableProfileCard"
-import { Text } from "@/shared/ui/Text/Text"
+import { Text } from "@/shared/ui/Text"
 import { useTranslation } from "react-i18next"
 
 interface ProfilePageProps {
