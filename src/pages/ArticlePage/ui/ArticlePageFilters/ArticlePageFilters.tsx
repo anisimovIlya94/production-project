@@ -1,4 +1,4 @@
-import { ArticleViewSelector, ArticleSortSelector, ArticleTypeTabs, ArticleSortField, ArticleType, ArticleView } from "@/entities/Article"
+import { ArticleSortField, ArticleType, ArticleView } from "@/entities/Article"
 import { articlePageActions } from "../../model/slice/articlePageSlice"
 import { FC, useCallback } from "react"
 import { useTranslation } from "react-i18next"
@@ -12,6 +12,9 @@ import { getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArtic
 import { SortOption } from "@/shared/lib/types/sort"
 import { fetchArticles } from "../../model/services/fetchArticles"
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce"
+import { ArticleSortSelector } from "@/features/ArticleSortSelector"
+import { ArticleViewSelector } from "@/features/ArticleViewSelector"
+import { ArticleTypeTabs } from "@/features/ArticleTypeTabs"
 
 interface ArticlePageFiltersProps {
 	className?: string;
