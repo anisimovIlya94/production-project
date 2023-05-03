@@ -54,10 +54,13 @@ module.exports = {
 			alias: "@",
 			testFiles: ["**/*.test.*", "**/*.stories.*", "**/*StoreDecorator.tsx"]
 		}],
-		"fsd-aid-plugin/layer-imports": ["error", {
+		"fsd-aid-plugin/layer-imports": [
+			"error",
+			{
 			alias: "@",
 			ignoreImportPatterns: ['**/StoreProvider', '**/testing']
-		}],
+			}
+		],
 	},
 	globals: {
 		__IS_DEV__: true,

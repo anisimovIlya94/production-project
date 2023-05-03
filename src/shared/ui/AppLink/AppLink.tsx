@@ -4,8 +4,6 @@ import cls from "./AppLink.module.scss"
 import { ForwardedRef, forwardRef } from "react"
 import { Link, LinkProps } from "react-router-dom"
 
-
-
 export enum AppLinkTheme {
     "PRIMARY" = "primary",
     "SECONDARY" = "secondary"
