@@ -4,9 +4,11 @@ import { Page } from "@/wigets/Page"
 
 const AboutPage = memo(() => {
 	const { t } = useTranslation("about")
-	return (<Page>
-		{t("Страница о сайте")}
-	</Page> )
+	return (
+		<Page>
+			{t("Страница о сайте")}
+		</Page>
+	)
 })
  
 export default AboutPage
