@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next"
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent"
 import { AppLink } from "@/shared/ui/AppLink"
 import { ArticleBlockType, ArticleView } from "../../model/consts/articleConsts"
-import { RoutesPath } from "@/shared/const/router"
+import { getRouteArticleDetails } from "@/shared/const/router"
 
 interface ArticleListItemProps {
   className?: string;
@@ -31,10 +31,6 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 			<Icon Src={EyeIcon} />
 		</>
 	)
-
-	// const onOpenArticle = useCallback(() => {
-	// 	navigate(RoutesPath.article_details + article.id)
-	// },[navigate, article.id])
 
 	const date = <Text text={article.createdAt} className={cls.date} />
 	const types = <Text text={article.type?.join(", ")} className={cls.types} />
@@ -55,7 +51,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 					<img className={cls.image} src={article.img} alt={article.title} />
 					<ArticleTextBlockComponent className={cls.textBlock} block={textBlock}/>
 					<div className={cls.footer}>
-						<AppLink target={target} to={RoutesPath.article_details + article.id}>
+						<AppLink target={target} to={getRouteArticleDetails(article.id)}>
 							<Button>{t("Читать далее...")}</Button>
 						</AppLink>
 						{views}
@@ -67,7 +63,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 
 	return (
 		<div className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
-			<AppLink target={target} to={RoutesPath.article_details + article.id}>
+			<AppLink target={target} to={getRouteArticleDetails(article.id)}>
 				<Card className={cls.card}>
 					<div className={cls.imageWrapper}>
 						<img src={article.img} alt={article.title} className={cls.image} />

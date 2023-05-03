@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom"
 import { HStack } from "@/shared/ui/Stack"
 import { NotificationButton } from "@/features/notificationButton"
 import { AvatarDropdown } from "@/features/avatarDropdown"
-import { RoutesPath } from "@/shared/const/router"
+import { getRouteArticleCreate } from "@/shared/const/router"
 
 interface NavbarProps {
   className?: string;
@@ -33,7 +33,7 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
 	}, [])
 
 	const onCreateArticle = useCallback(() => {
-		navigate(RoutesPath.article_details_create)
+		navigate(getRouteArticleCreate())
 	}, [navigate])
 
 	if (authData) {
