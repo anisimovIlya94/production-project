@@ -4,5 +4,5 @@ import { Page } from "@/wigets/Page"
 
 export const ForbiddenPage = memo(() => {
 	const { t } = useTranslation()
-	return <Page>{t("У вас нет доступа к этой странице")}</Page>
+	return <Page data-testId="ForbiddenPage">{t("У вас нет доступа к этой странице")}</Page>
 })

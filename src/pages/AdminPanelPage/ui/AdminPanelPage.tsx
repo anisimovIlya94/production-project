@@ -4,7 +4,7 @@ import { Page } from "@/wigets/Page"
 
 const AdminPanelPage = memo(() => {
 	const { t } = useTranslation()
-	return <Page>{t("Страница администрирования")}</Page>
+	return <Page data-testId="AdminPanelPage">{t("Страница администрирования")}</Page>
 })
 
 export default AdminPanelPage

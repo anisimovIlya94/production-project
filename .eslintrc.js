@@ -43,7 +43,7 @@ module.exports = {
 		],
 		"react/react-in-jsx-scope": ["off"],
 		"@typescript-eslint/ban-ts-comment": ["off"],
-		"i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["as","data-testid", "to", "target", "justify", "gap", "direction", "align", "role", "width", "height", "border"] }],
+		"i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["as","data-testid", "to", "target", "justify", "gap", "direction", "align", "role", "width", "height", "border", "data-testId"] }],
 		"linebreak-style": ["off"],
 		"react/display-name": ["off"],
 		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks

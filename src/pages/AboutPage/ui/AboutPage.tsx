@@ -5,7 +5,7 @@ import { Page } from "@/wigets/Page"
 const AboutPage = memo(() => {
 	const { t } = useTranslation("about")
 	return (
-		<Page>
+		<Page data-testId="AboutPage">
 			{t("Страница о сайте")}
 		</Page>
 	)

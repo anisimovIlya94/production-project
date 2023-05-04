@@ -9,8 +9,9 @@ import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfin
 import { useInitialEffects } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect"
 import { useTrottle } from "@/shared/lib/hooks/useTrottle/useTrottle"
 import cls from "./Page.module.scss"
+import { Tests } from "@/shared/lib/types/tests"
 
-interface PageProps {
+interface PageProps extends Tests{
   className?: string;
   children: ReactNode
   onScroll?: () => void
@@ -40,7 +41,7 @@ export const Page: FC<PageProps> = (props) => {
 		}))
 	}, 400)
 
-	return <main onScroll={onScrollPosition} ref={wrapperRef} className={classNames(cls.page, {}, [className])}>
+	return <main data-testId={props["data-testId"] ?? "Page"} onScroll={onScrollPosition} ref={wrapperRef} className={classNames(cls.page, {}, [className])}>
 		{children}
 		<div className={cls.trigger} ref={triggerRef}/>
 	</main>
