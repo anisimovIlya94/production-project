@@ -1,6 +1,6 @@
 import { buildSlice } from "@/shared/store/buildSlice"
 import { CounterSchema } from "../../"
-import { PayloadAction, createSlice } from "@reduxjs/toolkit"
+import { PayloadAction } from "@reduxjs/toolkit"
 
 const initialState: CounterSchema = {
 	value: 0,
