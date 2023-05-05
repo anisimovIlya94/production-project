@@ -5,7 +5,7 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 import { Currency } from "@/entities/Currency"
 import { Country } from "@/entities/Country"
-import AvatarImage from "@/shared/assets/tests/storybookAvatar.jpeg"
+// import AvatarImage from "@/shared/assets/tests/storybookAvatar.jpeg"
 import { Theme } from "@/shared/const/theme"
 
 export default {
@@ -27,7 +27,7 @@ const data = {
 	country: Country.Russia,
 	city: "Ekb",
 	username: "admin",
-	avatar : AvatarImage
+	avatar : "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
 }
 
 export const Primary = Template.bind({})
