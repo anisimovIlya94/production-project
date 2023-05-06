@@ -11,7 +11,7 @@ import { useThemes } from "@/shared/lib/hooks/useThemes/useThemes"
 const App = () => {
 	const { theme } = useThemes()
 	const dispatch = useDispatch()
-	const inited = useSelector(getUserInited)
+	// const inited = useSelector(getUserInited)
 
 	useEffect(() => {
 		dispatch(userActions.initialAuthData())
@@ -22,7 +22,7 @@ const App = () => {
 				<Navbar />
 				<div className="content-page">
 					<Sidebar />
-					{inited && <AppRouter />}
+					{<AppRouter />}
 				</div>
 			</Suspense>
 		</div>

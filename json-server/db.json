@@ -1462,6 +1462,15 @@
         "MANAGER"
       ],
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     }
   ],
   "article-rating": [
@@ -1535,6 +1544,17 @@
       "country": "Russia",
       "city": "Kgn",
       "username": "user",
+      "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "test",
+      "age": 29,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "TestCity",
+      "username": "testuser",
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     }
   ]
