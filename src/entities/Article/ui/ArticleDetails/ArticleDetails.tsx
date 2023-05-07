@@ -97,7 +97,6 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
 	} else {
 		content = (
 			<>
-				
 				<div className={cls.avatarWrapper}>
 					<Avatar size={200} src={data?.img} className={cls.avatar}/>
 				</div>
@@ -117,7 +116,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
 
 	return (
 		<DynamicModuleLoader isUnmount reducers={reducers}>
-			<VStack max className={classNames(cls.articleDetails, {}, [className])}>
+			<VStack data-testid="ArticleDetails.Info" max className={classNames(cls.articleDetails, {}, [className])}>
 				{content}
 			</VStack>
 		</DynamicModuleLoader>

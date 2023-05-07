@@ -38,14 +38,15 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<HStack align="center" justify="between" max className={classNames(cls.addCommentForm, {}, [className])}>
+			<HStack data-testId="AddCommentForm" align="center" justify="between" max className={classNames(cls.addCommentForm, {}, [className])}>
 				<Input
 					className={cls.input}
 					onChange={onChangeComment}
 					placeholder={t("Введите комментарий")}
 					value={text}
+					data-testId="AddCommentForm.Input"
 				/>
-				<Button onClick={onSetCommentHandler}>{t("Отправить")}</Button>
+				<Button data-testId="AddCommentForm.Button" onClick={onSetCommentHandler}>{t("Отправить")}</Button>
 			</HStack>
 		</DynamicModuleLoader>
 	)

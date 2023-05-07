@@ -69,12 +69,12 @@ export const RatingCard: FC<RatingCardProps> = (props) => {
 	const modalContent = (
 		<>
 			<Text title={feedbackTitle} />
-			<Input value={feedback} onChange={setFeedback} placeholder={t("Введите ваш отзыв")} />
+			<Input data-testId="RatingCard.Input" value={feedback} onChange={setFeedback} placeholder={t("Введите ваш отзыв")} />
 		</>
 	)
 
 	return (
-		<Card max className={classNames("", {}, [className])}>
+		<Card data-testId="RatingCard" max className={classNames("", {}, [className])}>
 			<VStack align="center" gap="16">
 				<Text title={ startsSelect ? t("Спасибо за оценку!") : title } />
 				<StarRating size={40} onSelect={onSelectStars} selectedStars={rate}/>
@@ -95,10 +95,10 @@ export const RatingCard: FC<RatingCardProps> = (props) => {
 						<VStack max gap="32">
 							{modalContent}
 							<HStack justify="end" max gap="16">
-								<Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelHandler}>
+								<Button data-testId="RatingCard.Cancel" theme={ButtonTheme.OUTLINE_RED} onClick={onCancelHandler}>
 									{t("Отменить")}
 								</Button>
-								<Button onClick={onAcceptHandler}>
+								<Button data-testId="RatingCard.Send" onClick={onAcceptHandler}>
 									{t("Отправить")}
 								</Button>
 							</HStack>

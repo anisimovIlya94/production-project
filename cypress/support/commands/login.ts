@@ -1,7 +1,9 @@
+import { User } from "./../../../src/entities/User/model/types/user"
 import { USER_AUTH_KEY } from "../../../src/shared/const/localstorage"
+import { selectByTestId } from "../../e2e/helpers/selectByTestId"
 
 export const login = (username = "testuser", password = "123") => {
-	cy.request({
+	return cy.request({
 		method: "POST",
 		url: "http://localhost:8000/login",
 		body: {
@@ -10,5 +12,19 @@ export const login = (username = "testuser", password = "123") => {
 		},
 	}).then(({ body }) => {
 		window.localStorage.setItem(USER_AUTH_KEY, JSON.stringify(body))
+		return body
 	})
+}
+
+export const getByTestId = (testId: string) => {
+	cy.get(selectByTestId(testId))
+}
+
+declare global {
+	namespace Cypress {
+		interface Chainable {
+			login(username?: string, password?: string): Chainable<User>
+			getByTestId(testId: string): Chainable<JQuery<HTMLElement>>
+		}
+	}
 }

@@ -39,7 +39,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 
 	if (view === ArticleView.BIG) {
 		return (
-			<div className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
+			<div data-testId="ArticleListItem" className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
 				<Card>
 					<div className={cls.header}>
 						<Avatar size={30} src={article.user.avatar} />
@@ -69,7 +69,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 	}
 
 	return (
-		<div className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
+		<div data-testId="ArticleListItem" className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
 			<AppLink target={target} to={getRouteArticleDetails(article.id)}>
 				<Card className={cls.card}>
 					<div className={cls.imageWrapper}>

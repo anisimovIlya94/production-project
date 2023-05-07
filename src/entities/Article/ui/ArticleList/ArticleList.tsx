@@ -41,7 +41,7 @@ export const ArticleList: FC<ArticleListProps> = (props) => {
 	}
 
 	return (
-		<div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+		<div data-testId="ArticleList" className={classNames(cls.articleList, {}, [className, cls[view]])}>
 			{articles.length > 0
 				? articles.map(renderArticle)
 				: null

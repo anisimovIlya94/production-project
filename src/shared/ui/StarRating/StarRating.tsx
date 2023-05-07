@@ -58,6 +58,8 @@ export const StarRating: FC<StarRatingProps> = (props) => {
 						onMouseEnter={() => onHover(starNumber)}
 						onMouseLeave={onLeave}
 						onClick={() => onClick(starNumber)}
+						data-testId={"StarRating." + starNumber}
+						data-selected={currentStars >= starNumber}
 					/>
 				))}
 			</HStack>
