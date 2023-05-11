@@ -1,0 +1,11 @@
+{
+    "id": "1",
+	"first": "test",
+	"lastname": "test",
+	"age": 29,
+	"currency": "RUB",
+	"country": "Russia",
+	"city": "TestCity",
+	"username": "testuser",
+	"avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
+}
