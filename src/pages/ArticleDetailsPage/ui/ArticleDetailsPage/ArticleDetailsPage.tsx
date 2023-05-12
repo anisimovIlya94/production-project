@@ -16,6 +16,8 @@ import { ArticleRecommendationsList } from "@/features/articleRecommendationsLis
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments"
 import { ArticleRating } from "@/features/articleRating"
 import { VStack } from "@/shared/ui/Stack"
+import { getFeaturesFlag } from "@/shared/lib/features/setGetFeatures"
+import { Counter } from "@/entities/Counter"
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -30,6 +32,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 	const { t } = useTranslation()
 
 	const { id = "1" } = useParams<{ id: string }>()
+	const isArticleRatingEnabled = getFeaturesFlag("isArticleRatingEnabled")
+	const isCounter = getFeaturesFlag("isCounterEnabled")
 
 	if (!id) {
 		return <Text title={t("Страница не найдена")} />
@@ -41,7 +45,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 				<VStack gap="16" max>
 					<ArticleDetailsPageHeader />
 					<ArticleDetails />
-					<ArticleRating articleId={id} />
+					{isArticleRatingEnabled && <ArticleRating articleId={id} />}
+					{isCounter && <Counter/>}
 					<ArticleRecommendationsList />
 					<ArticleDetailsComments id={id} />
 				</VStack>

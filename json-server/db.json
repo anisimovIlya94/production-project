@@ -2034,6 +2034,10 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
     },
     {
@@ -2043,6 +2047,10 @@
       "roles": [
         "USER"
       ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     },
     {
@@ -2052,6 +2060,10 @@
       "roles": [
         "MANAGER"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     },
     {
@@ -2061,6 +2073,10 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     }
   ],
