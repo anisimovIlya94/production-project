@@ -2038,6 +2038,11 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
       },
+      "jsonSettings": {
+        "theme": "app_orange",
+        "isFirstOpen": true,
+        "settingsPageHasBeenOpened": false
+      },
       "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
     },
     {
@@ -2050,6 +2055,11 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_light",
+        "isFirstOpen": true,
+        "settingsPageHasBeenOpened": false
       },
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     },
@@ -2064,6 +2074,11 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
       },
+      "jsonSettings": {
+        "theme": "app_light",
+        "isFirstOpen": true,
+        "settingsPageHasBeenOpened": false
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     },
     {
@@ -2076,6 +2091,11 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_light",
+        "isFirstOpen": true,
+        "settingsPageHasBeenOpened": false
       },
       "avatar": "https://xakep.ru/wp-content/uploads/2015/08/41885761_xl.jpg"
     }
