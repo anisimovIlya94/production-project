@@ -1,7 +1,6 @@
 import { ThunkOptions } from "@/app/providers/StoreProvider"
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { userActions, User } from "@/entities/User"
-import { USER_AUTH_KEY } from "@/shared/const/localstorage"
 
 interface LoginByUserNameProps {
     username: string
@@ -17,7 +16,6 @@ export const loginByUserName = createAsyncThunk<User, LoginByUserNameProps, Thun
 			if (!response.data) {
 				throw new Error()
 			}
-			localStorage.setItem(USER_AUTH_KEY, JSON.stringify(response.data))
 			dispatch(userActions.setAuthData(response.data))
 			// extra.navigate?.("/about")
 			return response.data

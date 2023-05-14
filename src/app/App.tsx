@@ -3,18 +3,24 @@ import AppRouter from "./providers/router/ui/AppRouter"
 import { Navbar } from "@/wigets/Navbar"
 import { Sidebar } from "@/wigets/SideBar"
 import { Suspense, useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { userActions } from "@/entities/User"
 import { useThemes } from "@/shared/lib/hooks/useThemes/useThemes"
+import { getUserInited, initAuthData } from "@/entities/User"
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch"
+import { useSelector } from "react-redux"
+import { PageLoader } from "@/shared/ui/PageLoader"
 
 const App = () => {
 	const { theme } = useThemes()
-	const dispatch = useDispatch()
-	// const inited = useSelector(getUserInited)
+	const dispatch = useAppDispatch()
+	const inited = useSelector(getUserInited)
 
 	useEffect(() => {
-		dispatch(userActions.initialAuthData())
-	},[dispatch])
+		dispatch(initAuthData())
+	}, [dispatch])
+	
+	if (!inited) {
+		return <PageLoader/>
+	}
 	return (
 		<div className={classNames("app", {}, [theme])}>
 			<Suspense fallback=" ">

@@ -8,7 +8,6 @@ import { getJsonSettings } from "../selectors/getJsonSettings"
 export const saveJsonSettings = createAsyncThunk<JsonSettings, JsonSettings, ThunkOptions<string>>(
 	"user/saveJsonSettings",
 	async (newJsonSettings, thunkAPI) => {
-		console.log("ff")
 		const {rejectWithValue, getState, dispatch} = thunkAPI
 		try {
 			const userData = getUserAuthData(getState())
