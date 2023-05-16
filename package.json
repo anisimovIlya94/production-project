@@ -26,7 +26,8 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "postinstall": "node ./scripts/clear-cash.js"
+    "postinstall": "node ./scripts/clear-cash.js",
+    "remove-features": "npx ts-node ./scripts/remove-feature.ts"
   },
   "keywords": [],
   "author": "",

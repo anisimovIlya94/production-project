@@ -18,6 +18,8 @@ import { ArticleRating } from "@/features/articleRating"
 import { VStack } from "@/shared/ui/Stack"
 import { getFeaturesFlag } from "@/shared/lib/features/setGetFeatures"
 import { Counter } from "@/entities/Counter"
+import { ToggleFeatures } from "@/shared/lib/features/ToggleFeatures/ToggleFeatures"
+import { Card } from "@/shared/ui/Card"
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -45,7 +47,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 				<VStack gap="16" max>
 					<ArticleDetailsPageHeader />
 					<ArticleDetails />
-					{isArticleRatingEnabled && <ArticleRating articleId={id} />}
+					<ToggleFeatures
+						feature="isArticleRatingEnabled"
+						on={<ArticleRating articleId={id} />}
+						off={<Card>{t("Оценка статей скоро появится!")}</Card>}
+					/>
+					{/* {isArticleRatingEnabled && <ArticleRating articleId={id} />} */}
 					{isCounter && <Counter/>}
 					<ArticleRecommendationsList />
 					<ArticleDetailsComments id={id} />
