@@ -2039,9 +2039,10 @@
         "isCounterEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_dark",
+        "theme": "app_light",
         "isFirstOpen": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "articlePageHasBeenOpened": true
       },
       "avatar": "https://cq.ru/storage/uploads/posts/961737/fr.jpg"
     },

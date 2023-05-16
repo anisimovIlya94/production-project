@@ -16,6 +16,7 @@ import { initArticlesPage } from "../../model/services/initArticlesPage/initArti
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters"
 import { useSearchParams } from "react-router-dom"
 import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList"
+import { ArticlePageGreeting } from "@/features/articlePageGreeting"
 
 interface ArticlePageProps {
   className?: string;
@@ -48,6 +49,7 @@ const ArticlePage: FC<ArticlePageProps> = (props) => {
 			>
 				<ArticlePageFilters view={view} />
 				<ArticleInfiniteList view={view} className={cls.list} />
+				<ArticlePageGreeting/>
 			</Page>
 		</DynamicModuleLoader>
 	)
